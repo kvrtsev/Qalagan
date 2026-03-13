@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qalagan</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      overflow-x: hidden;
+    }
+    body {
+      width: 100%;
+    }
+    .page {
+      width: 100%;
+      overflow-x: hidden;
+    }
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .hero {
+      padding: 72px 0 48px;
+      text-align: center;
+      background: white;
+    }
+    .brand {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+    .subtitle {
+      font-size: 20px;
+      color: #475569;
+      max-width: 760px;
+      margin: 0 auto 16px;
+      line-height: 1.5;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .btn {
+      border: none;
+      border-radius: 14px;
+      padding: 14px 22px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: #0f766e;
+      color: white;
+    }
+    .btn-secondary {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .section {
+      padding: 56px 0;
+    }
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .section-text {
+      text-align: center;
+      color: #475569;
+      max-width: 760px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+    .demo-card,
+    .cta-card,
+    .footer-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 24px;
+    }
+    .demo-box {
+      max-width: 520px;
+      margin: 0 auto;
+      border: 1px solid #cbd5e1;
+      border-radius: 24px;
+      padding: 20px;
+      background: #f8fafc;
+      text-align: left;
+    }
+    .demo-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .demo-subtitle {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .label {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 18px 0 10px;
+    }
+    .chips {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      border: 1px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 10px 14px;
+      background: white;
+      font-size: 14px;
+    }
+    .chip.active {
+      background: #0f766e;
+      color: white;
+      border-color: #0f766e;
+    }
+    .demo-button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 14px;
+      border-radius: 14px;
+      border: none;
+      background: #0f766e;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .features {
+      display: grid;
+      gap: 12px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .feature {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 16px 18px;
+      color: #334155;
+    }
+    .cta-card {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .footer-card {
+      text-align: center;
+      color: #475569;
+    }
+    @media (max-width: 640px) {
+      .hero {
+        padding: 56px 0 36px;
+      }
+      .brand {
+        font-size: 38px;
+      }
+      .subtitle {
+        font-size: 17px;
+      }
+      .section-title {
+        font-size: 26px;
+      }
+      .container {
+        padding: 0 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <div class="container">
+        <div class="brand">Qalagan</div>
+        <div class="subtitle">
+          Онлайн-запись на услуги через одну ссылку.
+        </div>
+        <div class="subtitle">
+          Добавьте ссылку в Instagram, WhatsApp, Telegram и другие соцсети —
+          и клиенты смогут записываться сами, без переписки в Direct.
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="#demo">Посмотреть демо</a>
+          <a class="btn btn-secondary" href="#connect">Подключить бизнес</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="container">
+        <div class="section-title">Как работает Qalagan</div>
+        <div class="section-text">
+          Клиент открывает ссылку, выбирает услугу, день и время, а бизнес получает готовую запись.
+        </div>
+
+        <div class="demo-card">
+          <div class="demo-box">
+            <div class="demo-title">Barber House</div>
+            <div class="demo-subtitle">Кокшетау • запись онлайн</div>
+
+            <div class="label">Выберите услугу</div>
+            <div class="chips">
+              <div class="chip active">Мужская стрижка</div>
+              <div class="chip">Борода</div>
+              <div class="chip">Стрижка + борода</div>
+            </div>
+
+            <div class="label">Выберите день</div>
+            <div class="chips">
+              <div class="chip active">Сегодня</div>
+              <div class="chip">Завтра</div>
+              <div class="chip">15 июн</div>
+            </div>
+
+            <div class="label">Выберите время</div>
+            <div class="chips">
+              <div class="chip active">15:00</div>
+              <div class="chip">16:00</div>
+              <div class="chip">17:00</div>
+            </div>
+
+            <button class="demo-button">Записаться</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">Почему Qalagan</div>
+        <div class="features">
+          <div class="feature">Запись за 10 секунд</div>
+          <div class="feature">Ссылка для Instagram bio, WhatsApp и Telegram</div>
+          <div class="feature">Меньше переписок в Direct</div>
+          <div class="feature">Быстрые окна и предоплата</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="connect">
+      <div class="container">
+        <div class="cta-card">
+          <div class="section-title">Подключите свой бизнес к Qalagan</div>
+          <div class="section-text">
+            Если хочешь протестировать сервис для своего салона или как мастер —
+            свяжись с нами.
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:hello@qalagan.kz">Написать</a>
+            <a class="btn btn-secondary" href="#footer">Контакты</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="footer">
+      <div class="container">
+        <div class="footer-card">
+          <div class="brand" style="font-size: 28px; margin-bottom: 10px;">Qalagan</div>
+          <div>Инструмент онлайн-записи для социальных сетей</div>
+          <div style="margin-top: 18px;">Email • Telegram • Instagram</div>
+          <div style="margin-top: 18px;">© Qalagan</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
