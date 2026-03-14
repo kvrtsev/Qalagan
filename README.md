@@ -1,20 +1,7 @@
-# Qalagan
+# Qalagan site
 
-Qalagan — это сервис онлайн-записи на услуги через одну ссылку.
-
-Клиенты могут записываться через Instagram, WhatsApp, Telegram и другие социальные сети, не переписываясь в Direct.
-
-## MVP включает
-
-- страницу записи
-- выбор услуги
-- выбор дня
-- выбор времени
-- предоплату
-- быстрые окна
-- календарь
-- аналитику
-
-## Статус
-
-MVP prototype in progress.
+index.html — разметка
+styles.css — стили
+script.js — логика
+favicon.svg — favicon
+og-image.svg — превью ссылки
