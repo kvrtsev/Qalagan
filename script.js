@@ -1,4 +1,4 @@
-/* Qalagan v10 fixed */
+
 const translations = JSON.parse(document.getElementById('translations-json').textContent);
 const specialistSets = JSON.parse(document.getElementById('specialists-json').textContent);
 let currentLang = localStorage.getItem('qalagan_lang') || 'ru';
@@ -10,7 +10,7 @@ function setLanguage(lang){
   document.documentElement.lang = lang === 'kk' ? 'kk' : lang;
   translatable.forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (dict[key]) el.textContent = dict[key];
+    if (dict[key] !== undefined) el.textContent = dict[key];
   });
   langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
   localStorage.setItem('qalagan_lang', lang);
@@ -38,11 +38,9 @@ function createRotator(targetId, type, renderer, interval){
   function restart(){ index = 0; start(); }
   return { start, stop, restart };
 }
-const heroRotator = createRotator('heroRotator', 'hero', renderHeroCard, 2800);
+const heroRotator = createRotator('heroRotator', 'hero', renderHeroCard, 2900);
 const showcaseRotator = createRotator('showcaseRotator', 'showcase', renderShowcaseCard, 3200);
-const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.14 });
+const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.14 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-setLanguage(currentLang);
-heroRotator.start();
-showcaseRotator.start();
+setLanguage(currentLang); heroRotator.start(); showcaseRotator.start();
 document.addEventListener('visibilitychange', () => { if(document.hidden){ heroRotator.stop(); showcaseRotator.stop(); } else { heroRotator.start(); showcaseRotator.start(); } });
