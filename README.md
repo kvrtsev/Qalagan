@@ -1,1 +1,3 @@
-# Qalagan site v12
+# Qalagan site v12.1
+
+Pricing contrast fix.
