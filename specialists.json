@@ -1,0 +1,192 @@
+{
+  "hero": {
+    "ru": [
+      {
+        "theme": "theme-charcoal",
+        "label": "Персональная страница записи",
+        "title": "Барбершоп Atlas",
+        "caption": "Стрижки, борода, свободные окна",
+        "chip1": "Instagram / WhatsApp",
+        "chip2": "Без регистрации",
+        "services": [["Мужская стрижка", "50 минут", "7 000 ₸"], ["Стрижка + борода", "80 минут", "10 000 ₸"], ["Укладка", "30 минут", "4 500 ₸"]],
+        "slots": ["10:00", "11:30", "13:00", "15:00", "16:30", "18:00"],
+        "active": 1,
+        "busy": [3],
+        "timesTitle": "Свободное время",
+        "day": "Сегодня",
+        "formTitle": "Быстрая заявка",
+        "formDesc": "Клиент выбирает услугу и оставляет контакты за 1 минуту."
+      },
+      {
+        "theme": "theme-plum",
+        "label": "Персональная страница записи",
+        "title": "Ayaru Beauty",
+        "caption": "Маникюр и окрашивание по слотам",
+        "chip1": "Telegram / WhatsApp",
+        "chip2": "Мобильный формат",
+        "services": [["Маникюр", "90 минут", "9 000 ₸"], ["Покрытие", "60 минут", "7 000 ₸"], ["Окрашивание", "120 минут", "18 000 ₸"]],
+        "slots": ["09:30", "11:00", "12:30", "14:30", "16:00", "18:00"],
+        "active": 3,
+        "busy": [0],
+        "timesTitle": "Свободное время",
+        "day": "Сегодня",
+        "formTitle": "Удобно для клиента",
+        "formDesc": "Одна ссылка вместо длинной переписки в мессенджере."
+      }
+    ],
+    "kk": [
+      {
+        "theme": "theme-charcoal",
+        "label": "Жеке жазылу парағы",
+        "title": "Atlas барбершопы",
+        "caption": "Шаш қию, сақал, бос уақыт",
+        "chip1": "Instagram / WhatsApp",
+        "chip2": "Тіркелусіз",
+        "services": [["Ерлер шаш қиюы", "50 минут", "7 000 ₸"], ["Шаш + сақал", "80 минут", "10 000 ₸"], ["Стайлинг", "30 минут", "4 500 ₸"]],
+        "slots": ["10:00", "11:30", "13:00", "15:00", "16:30", "18:00"],
+        "active": 1,
+        "busy": [3],
+        "timesTitle": "Бос уақыт",
+        "day": "Бүгін",
+        "formTitle": "Жылдам өтінім",
+        "formDesc": "Клиент 1 минут ішінде қызметті таңдап, байланысын қалдырады."
+      },
+      {
+        "theme": "theme-plum",
+        "label": "Жеке жазылу парағы",
+        "title": "Ayaru Beauty",
+        "caption": "Маникюр және бояу слот арқылы",
+        "chip1": "Telegram / WhatsApp",
+        "chip2": "Мобильді формат",
+        "services": [["Маникюр", "90 минут", "9 000 ₸"], ["Қаптама", "60 минут", "7 000 ₸"], ["Бояу", "120 минут", "18 000 ₸"]],
+        "slots": ["09:30", "11:00", "12:30", "14:30", "16:00", "18:00"],
+        "active": 3,
+        "busy": [0],
+        "timesTitle": "Бос уақыт",
+        "day": "Бүгін",
+        "formTitle": "Клиентке ыңғайлы",
+        "formDesc": "Мессенджердегі ұзақ хат алмасудың орнына бір сілтеме."
+      }
+    ],
+    "en": [
+      {
+        "theme": "theme-charcoal",
+        "label": "Personal booking page",
+        "title": "Atlas Barbershop",
+        "caption": "Haircuts, beard, open slots",
+        "chip1": "Instagram / WhatsApp",
+        "chip2": "No signup",
+        "services": [["Men's haircut", "50 min", "7 000 ₸"], ["Haircut + beard", "80 min", "10 000 ₸"], ["Styling", "30 min", "4 500 ₸"]],
+        "slots": ["10:00", "11:30", "13:00", "15:00", "16:30", "18:00"],
+        "active": 1,
+        "busy": [3],
+        "timesTitle": "Available time",
+        "day": "Today",
+        "formTitle": "Quick request",
+        "formDesc": "The client selects a service and leaves contacts in about one minute."
+      },
+      {
+        "theme": "theme-plum",
+        "label": "Personal booking page",
+        "title": "Ayaru Beauty",
+        "caption": "Manicure and coloring by slots",
+        "chip1": "Telegram / WhatsApp",
+        "chip2": "Mobile format",
+        "services": [["Manicure", "90 min", "9 000 ₸"], ["Coating", "60 min", "7 000 ₸"], ["Coloring", "120 min", "18 000 ₸"]],
+        "slots": ["09:30", "11:00", "12:30", "14:30", "16:00", "18:00"],
+        "active": 3,
+        "busy": [0],
+        "timesTitle": "Available time",
+        "day": "Today",
+        "formTitle": "Client-friendly",
+        "formDesc": "One clear link instead of long back-and-forth messages."
+      }
+    ]
+  },
+  "showcase": {
+    "ru": [
+      {
+        "theme": "theme-teal",
+        "label": "Страница записи",
+        "title": "Balance Cosmetology",
+        "caption": "Процедуры, цена и запись",
+        "tag": "+ 2GIS",
+        "services": [["Чистка лица", "70 минут", "15 000 ₸"], ["Пилинг", "45 минут", "11 000 ₸"]],
+        "slots": ["09:00", "10:30", "12:00", "14:00", "15:30", "17:00"],
+        "active": 2,
+        "busy": [5],
+        "timesTitle": "Доступное время",
+        "day": "Завтра"
+      },
+      {
+        "theme": "theme-rose",
+        "label": "Страница записи",
+        "title": "Asyl Nails",
+        "caption": "Маникюр и педикюр",
+        "tag": "+ WhatsApp",
+        "services": [["Маникюр", "90 минут", "9 000 ₸"], ["Педикюр", "100 минут", "11 000 ₸"]],
+        "slots": ["10:00", "11:30", "13:00", "15:30", "17:00", "18:30"],
+        "active": 4,
+        "busy": [1],
+        "timesTitle": "Доступное время",
+        "day": "Завтра"
+      }
+    ],
+    "kk": [
+      {
+        "theme": "theme-teal",
+        "label": "Жазылу беті",
+        "title": "Balance Cosmetology",
+        "caption": "Процедура, баға және жазылу",
+        "tag": "+ 2GIS",
+        "services": [["Бет тазалау", "70 минут", "15 000 ₸"], ["Пилинг", "45 минут", "11 000 ₸"]],
+        "slots": ["09:00", "10:30", "12:00", "14:00", "15:30", "17:00"],
+        "active": 2,
+        "busy": [5],
+        "timesTitle": "Қолжетімді уақыт",
+        "day": "Ертең"
+      },
+      {
+        "theme": "theme-rose",
+        "label": "Жазылу беті",
+        "title": "Asyl Nails",
+        "caption": "Маникюр және педикюр",
+        "tag": "+ WhatsApp",
+        "services": [["Маникюр", "90 минут", "9 000 ₸"], ["Педикюр", "100 минут", "11 000 ₸"]],
+        "slots": ["10:00", "11:30", "13:00", "15:30", "17:00", "18:30"],
+        "active": 4,
+        "busy": [1],
+        "timesTitle": "Қолжетімді уақыт",
+        "day": "Ертең"
+      }
+    ],
+    "en": [
+      {
+        "theme": "theme-teal",
+        "label": "Booking page",
+        "title": "Balance Cosmetology",
+        "caption": "Procedures, price, and booking",
+        "tag": "+ 2GIS",
+        "services": [["Face cleansing", "70 min", "15 000 ₸"], ["Peeling", "45 min", "11 000 ₸"]],
+        "slots": ["09:00", "10:30", "12:00", "14:00", "15:30", "17:00"],
+        "active": 2,
+        "busy": [5],
+        "timesTitle": "Available time",
+        "day": "Tomorrow"
+      },
+      {
+        "theme": "theme-rose",
+        "label": "Booking page",
+        "title": "Asyl Nails",
+        "caption": "Manicure and pedicure",
+        "tag": "+ WhatsApp",
+        "services": [["Manicure", "90 min", "9 000 ₸"], ["Pedicure", "100 min", "11 000 ₸"]],
+        "slots": ["10:00", "11:30", "13:00", "15:30", "17:00", "18:30"],
+        "active": 4,
+        "busy": [1],
+        "timesTitle": "Available time",
+        "day": "Tomorrow"
+      }
+    ]
+  }
+}
