@@ -1,3 +1,8 @@
-# Qalagan site v12.1
+# Qalagan site v13.0
 
-Pricing contrast fix.
+Minimalist, conversion-focused landing page for appointment-based specialists.
+
+## Files
+- `index.html` — landing structure + localization dictionaries (`ru`, `kk`, `en`) and preview datasets.
+- `styles.css` — layout and UI styles.
+- `script.js` — localization switcher, rotators, reveal animations.
