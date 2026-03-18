@@ -1,44 +1,14 @@
+
 const translations = JSON.parse(document.getElementById('translations-json').textContent);
 const specialistSets = JSON.parse(document.getElementById('specialists-json').textContent);
-const defaultLang = 'ru';
-let currentLang = localStorage.getItem('qalagan_lang') || defaultLang;
-const langSwitch = document.querySelector('.lang-switch');
-const langToggle = document.querySelector('.lang-toggle');
+let currentLang = localStorage.getItem('qalagan_lang') || 'ru';
 const langButtons = document.querySelectorAll('.lang-btn');
 const translatable = document.querySelectorAll('[data-i18n]');
-const supportedLangs = new Set(['ru', 'kk', 'en']);
-
-function closeLangMenu() {
-  if (!langSwitch || !langToggle) return;
-  langSwitch.classList.remove('open');
-  langToggle.setAttribute('aria-expanded', 'false');
-}
-
-function openLangMenu() {
-  if (!langSwitch || !langToggle) return;
-  langSwitch.classList.add('open');
-  langToggle.setAttribute('aria-expanded', 'true');
-}
-
-function updateLangToggleLabel(lang) {
-  if (!langToggle) return;
-  const labels = {
-    ru: 'Выбрать язык. Текущий: Русский',
-    kk: 'Тілді таңдау. Ағымдағысы: Қазақша',
-    en: 'Choose language. Current: English'
-  };
-  langToggle.setAttribute('aria-label', labels[lang] || labels[defaultLang]);
-  langToggle.setAttribute('title', labels[lang] || labels[defaultLang]);
-}
-
-function setLanguage(lang, options = {}) {
-  const { restartRotators = true } = options;
-  const nextLang = supportedLangs.has(lang) ? lang : defaultLang;
-  currentLang = nextLang;
-  const dict = translations[nextLang] || translations[defaultLang];
-  document.documentElement.lang = nextLang;
-
-  translatable.forEach((el) => {
+function setLanguage(lang){
+  currentLang = lang;
+  const dict = translations[lang] || translations.ru;
+  document.documentElement.lang = lang === 'kk' ? 'kk' : lang;
+  translatable.forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (dict[key] !== undefined) el.textContent = dict[key];
   });
@@ -53,8 +23,8 @@ function setLanguage(lang, options = {}) {
   localStorage.setItem('qalagan_lang', nextLang);
 
   if (restartRotators) {
-    heroRotator.restart();
-    exampleRotator.restart();
+    heroShowcase.restart();
+    examplesShowcase.restart();
   }
 }
 
@@ -79,24 +49,19 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeLangMenu();
 });
 
-function getCurrentDict() {
-  return translations[currentLang] || translations[defaultLang];
-}
-
-function renderContacts(contacts) {
-  return contacts.map((type) => `<span class="contact-dot ${type}" aria-hidden="true"></span>`).join('');
-}
-
 function renderServices(services) {
-  return services.map(([title, price]) => `<div class="service-row"><span>${title}</span><strong>${price}</strong></div>`).join('');
+  return services
+    .map(([title, price]) => `<div class="preview-row"><span>${title}</span><strong>${price}</strong></div>`)
+    .join('');
 }
 
 function renderSlots(slots) {
-  return slots.map((slot, index) => `<span class="slot-chip ${index === 2 ? 'active' : ''}">${slot}</span>`).join('');
+  return slots.map((slot) => `<span class="time-chip">${slot}</span>`).join('');
 }
 
-function renderScreen(item, { compact = false } = {}) {
-  const dict = getCurrentDict();
+function renderSpecialistCard(item, options = {}) {
+  const { compact = false } = options;
+  const dict = translations[currentLang] || translations[defaultLang];
   return `
     <article class="specialist-screen ${item.theme} ${compact ? 'compact' : ''}">
       <div class="screen-top">
@@ -104,21 +69,21 @@ function renderScreen(item, { compact = false } = {}) {
           <div class="screen-name">${item.name}</div>
           <div class="screen-role">${item.role}</div>
         </div>
-        <div class="screen-contacts">${renderContacts(item.contacts)}</div>
+        <div class="screen-status">${dict.screen_status}</div>
       </div>
-      <div class="screen-card-block">
-        <div class="screen-label">${dict.nav_examples}</div>
+      <div class="screen-block">
+        <div class="screen-label">${dict.screen_services}</div>
         ${renderServices(item.services)}
       </div>
-      <div class="screen-card-block">
-        <div class="screen-label">${dict.examples_phone_hint}</div>
-        <div class="slot-grid">${renderSlots(item.slots)}</div>
+      <div class="screen-block">
+        <div class="screen-label">${dict.screen_slots}</div>
+        <div class="time-grid">${renderSlots(item.slots)}</div>
       </div>
-      <button class="screen-button" type="button">${item.cta}</button>
+      <button class="screen-cta" type="button">${item.cta}</button>
     </article>`;
 }
 
-function createHeroRotator(targetId) {
+function createHeroShowcase(targetId) {
   const el = document.getElementById(targetId);
   let index = 0;
   let timer = null;
@@ -133,20 +98,18 @@ function createHeroRotator(targetId) {
     const right = items[(index + 1) % items.length];
 
     el.innerHTML = `
-      <div class="hero-phone left">${renderScreen(left, { compact: true })}</div>
-      <div class="hero-phone center">${renderScreen(center)}</div>
-      <div class="hero-phone right">${renderScreen(right, { compact: true })}</div>`;
+      <div class="hero-screen side left">${renderSpecialistCard(left, { compact: true })}</div>
+      <div class="hero-screen center">${renderSpecialistCard(center)}</div>
+      <div class="hero-screen side right">${renderSpecialistCard(right, { compact: true })}</div>`;
   }
 
   function start() {
     stop();
     paint();
     timer = setInterval(() => {
-      const items = dataset();
-      if (!items.length) return;
-      index = (index + 1) % items.length;
+      index = (index + 1) % dataset().length;
       paint();
-    }, 4300);
+    }, 4200);
   }
 
   function stop() {
@@ -162,7 +125,7 @@ function createHeroRotator(targetId) {
   return { start, stop, restart };
 }
 
-function createExampleRotator(targetId) {
+function createExamplesRotator(targetId) {
   const el = document.getElementById(targetId);
   let index = 0;
   let timer = null;
@@ -170,36 +133,36 @@ function createExampleRotator(targetId) {
 
   const dataset = () => specialistSets.showcase[currentLang] || specialistSets.showcase[defaultLang] || [];
 
-  function panel(item, className) {
-    const node = document.createElement('div');
-    node.className = `example-panel ${className}`;
-    node.innerHTML = renderScreen(item);
-    return node;
+  function renderPanel(item, cls) {
+    const panel = document.createElement('div');
+    panel.className = `showcase-panel ${cls}`;
+    panel.innerHTML = renderSpecialistCard(item);
+    return panel;
   }
 
-  function paint(currentIndex) {
+  function paint() {
     const items = dataset();
     if (!el || !items.length) return;
     el.innerHTML = '';
-    el.appendChild(panel(items[currentIndex % items.length], 'current'));
+    el.appendChild(renderPanel(items[nextIndex % items.length], 'current'));
   }
 
   function tick() {
     const items = dataset();
-    if (!el || items.length < 2 || isAnimating) return;
+    if (!el || isAnimating || items.length < 2) return;
+    const currentPanel = el.querySelector('.showcase-panel.current');
     const nextIndex = (index + 1) % items.length;
-    const current = el.querySelector('.example-panel.current');
-    const next = panel(items[nextIndex], 'next');
-    el.appendChild(next);
+    const nextPanel = renderPanel(items[nextIndex], 'next');
+    el.appendChild(nextPanel);
     isAnimating = true;
 
     requestAnimationFrame(() => {
       el.classList.add('switching');
-      current?.classList.add('leave');
-      next.classList.add('enter');
+      currentPanel?.classList.add('leave');
+      nextPanel.classList.add('enter');
     });
 
-    next.addEventListener('transitionend', () => {
+    nextPanel.addEventListener('transitionend', () => {
       index = nextIndex;
       isAnimating = false;
       el.classList.remove('switching');
@@ -210,7 +173,7 @@ function createExampleRotator(targetId) {
   function start() {
     stop();
     paint(index);
-    timer = setInterval(tick, 5000);
+    timer = setInterval(tick, 4800);
   }
 
   function stop() {
@@ -227,8 +190,8 @@ function createExampleRotator(targetId) {
   return { start, stop, restart };
 }
 
-const heroRotator = createHeroRotator('heroStack');
-const exampleRotator = createExampleRotator('showcaseRotator');
+const heroShowcase = createHeroShowcase('heroStack');
+const examplesShowcase = createExamplesRotator('showcaseRotator');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -237,15 +200,15 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 setLanguage(currentLang, { restartRotators: false });
-heroRotator.start();
-exampleRotator.start();
+heroShowcase.start();
+examplesShowcase.start();
 
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
-    heroRotator.stop();
-    exampleRotator.stop();
+    heroShowcase.stop();
+    examplesShowcase.stop();
   } else {
-    heroRotator.start();
-    exampleRotator.start();
+    heroShowcase.start();
+    examplesShowcase.start();
   }
 });
