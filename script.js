@@ -1,44 +1,14 @@
+
 const translations = JSON.parse(document.getElementById('translations-json').textContent);
 const specialistSets = JSON.parse(document.getElementById('specialists-json').textContent);
-const defaultLang = 'ru';
-let currentLang = localStorage.getItem('qalagan_lang') || defaultLang;
-const langSwitch = document.querySelector('.lang-switch');
-const langToggle = document.querySelector('.lang-toggle');
+let currentLang = localStorage.getItem('qalagan_lang') || 'ru';
 const langButtons = document.querySelectorAll('.lang-btn');
 const translatable = document.querySelectorAll('[data-i18n]');
-const supportedLangs = new Set(['ru', 'kk', 'en']);
-
-function closeLangMenu() {
-  if (!langSwitch || !langToggle) return;
-  langSwitch.classList.remove('open');
-  langToggle.setAttribute('aria-expanded', 'false');
-}
-
-function openLangMenu() {
-  if (!langSwitch || !langToggle) return;
-  langSwitch.classList.add('open');
-  langToggle.setAttribute('aria-expanded', 'true');
-}
-
-function updateLangToggleLabel(lang) {
-  if (!langToggle) return;
-  const labels = {
-    ru: 'Выбрать язык. Текущий: Русский',
-    kk: 'Тілді таңдау. Ағымдағысы: Қазақша',
-    en: 'Choose language. Current: English'
-  };
-  langToggle.setAttribute('aria-label', labels[lang] || labels[defaultLang]);
-  langToggle.setAttribute('title', labels[lang] || labels[defaultLang]);
-}
-
-function setLanguage(lang, options = {}) {
-  const { restartRotators = true } = options;
-  const nextLang = supportedLangs.has(lang) ? lang : defaultLang;
-  currentLang = nextLang;
-  const dict = translations[nextLang] || translations[defaultLang];
-  document.documentElement.lang = nextLang;
-
-  translatable.forEach((el) => {
+function setLanguage(lang){
+  currentLang = lang;
+  const dict = translations[lang] || translations.ru;
+  document.documentElement.lang = lang === 'kk' ? 'kk' : lang;
+  translatable.forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (dict[key] !== undefined) el.textContent = dict[key];
   });
