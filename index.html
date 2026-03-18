@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Qalagan.kz — персональная страница записи для специалистов</title>
-<meta name="description" content="Qalagan — персональная страница записи для специалистов: услуги, цены, доступность и аккуратный путь к записи без хаоса в переписках." />
-<meta property="og:title" content="Qalagan.kz" />
-<meta property="og:description" content="Персональная страница записи для специалистов сферы услуг." />
+<title>Qalagan — персональная страница записи для специалистов</title>
+<meta name="description" content="Qalagan — персональная страница специалиста: услуги, цены, расписание и запись в одном месте без хаоса в переписках." />
+<meta property="og:title" content="Qalagan" />
+<meta property="og:description" content="Персональная страница записи для специалистов, которые работают через WhatsApp, Telegram и Instagram." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="og-image.svg" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -16,23 +16,584 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="nav-wrap"><nav class="container nav"><a class="brand" href="#top">Qalagan.kz</a><div class="nav-right"><div class="lang-switch" aria-label="Language switcher"><button class="lang-btn active" data-lang="ru">RU</button><button class="lang-btn" data-lang="kk">KZ</button><button class="lang-btn" data-lang="en">EN</button></div><a href="#pricing" class="nav-cta" data-i18n="nav_cta"></a></div></nav></header>
+<header class="nav-wrap">
+  <nav class="container nav">
+    <a class="brand" href="#top">Qalagan</a>
+    <div class="nav-links" aria-label="Primary">
+      <a href="#audience" data-i18n="nav_for"></a>
+      <a href="#how" data-i18n="nav_how"></a>
+      <a href="#pricing" data-i18n="nav_pricing"></a>
+      <a href="#examples" data-i18n="nav_examples"></a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switch" aria-label="Language switcher">
+        <button class="lang-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="langMenu" aria-label="Select language">
+          <span class="sr-only">Select language</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2Zm6.92 9h-3.01a15.6 15.6 0 0 0-1.52-5.12A8.03 8.03 0 0 1 18.92 11ZM12 4.04c.96 1.14 2.17 3.6 2.68 6.96H9.32C9.83 7.64 11.04 5.18 12 4.04ZM4.26 13h3.01a15.6 15.6 0 0 0 1.52 5.12A8.03 8.03 0 0 1 4.26 13Zm3.01-2H4.26a8.03 8.03 0 0 1 4.53-5.12A15.6 15.6 0 0 0 7.27 11Zm1.98 0a13.61 13.61 0 0 1 1.75-5.86A13.61 13.61 0 0 1 12.75 11Zm3.5 2A13.61 13.61 0 0 1 11 18.86 13.61 13.61 0 0 1 9.25 13Zm1.93 5.12A15.6 15.6 0 0 0 16.73 13h3.01a8.03 8.03 0 0 1-4.53 5.12Z"></path></svg>
+        </button>
+        <div class="lang-menu" id="langMenu" role="menu" aria-label="Select language">
+          <button type="button" class="lang-btn active" data-lang="ru" role="menuitemradio" aria-checked="true">Русский</button>
+          <button type="button" class="lang-btn" data-lang="kk" role="menuitemradio" aria-checked="false">Қазақша</button>
+          <button type="button" class="lang-btn" data-lang="en" role="menuitemradio" aria-checked="false">English</button>
+        </div>
+      </div>
+      <a href="#connect" class="nav-cta" data-i18n="nav_cta"></a>
+    </div>
+  </nav>
+</header>
+
 <main id="top">
-<section class="hero container reveal"><div class="hero-copy"><h1 data-i18n="hero_title"></h1><p class="hero-subtitle" data-i18n="hero_desc"></p><div class="hero-actions"><a href="#demo" class="btn btn-dark" data-i18n="hero_primary"></a><a href="#how" class="btn btn-light" data-i18n="hero_secondary"></a></div></div><div class="hero-demo-shell"><div class="demo-shell"><div class="demo-topbar"><div class="demo-brand">Qalagan Page</div><div class="demo-status" data-i18n="demo_status"></div></div><div class="phone-frame"><div class="rotator-stage"><div id="heroRotator" class="rotator-card"></div></div></div></div></div></section>
-<section class="section section-soft reveal"><div class="container"><div class="section-head"><h2 data-i18n="trust_title"></h2><p data-i18n="trust_desc"></p></div><div class="logo-row"><div class="logo-pill" data-i18n="trust1"></div><div class="logo-pill" data-i18n="trust2"></div><div class="logo-pill" data-i18n="trust3"></div><div class="logo-pill" data-i18n="trust4"></div><div class="logo-pill" data-i18n="trust5"></div><div class="logo-pill" data-i18n="trust6"></div></div></div></section>
-<section class="section reveal"><div class="container problem-grid"><article class="card card-large"><div class="section-head compact"><h2 data-i18n="problem_title"></h2></div><ul class="problem-list"><li data-i18n="problem1"></li><li data-i18n="problem2"></li><li data-i18n="problem3"></li><li data-i18n="problem4"></li></ul></article><article class="card card-accent-light"><div class="section-head compact"><h2 data-i18n="solution_title"></h2><p data-i18n="solution_desc"></p></div></article></div></section>
-<section class="section section-dark reveal"><div class="container"><div class="dark-band"><div class="dark-band-copy"><div class="eyebrow dark"><span class="eyebrow-dot light"></span><span data-i18n="accent_label"></span></div><h2 data-i18n="accent_title"></h2><p data-i18n="accent_desc"></p></div><div class="dark-band-pills"><div class="dark-pill" data-i18n="accent_pill1"></div><div class="dark-pill" data-i18n="accent_pill2"></div><div class="dark-pill" data-i18n="accent_pill3"></div><div class="dark-pill" data-i18n="accent_pill4"></div><div class="dark-pill" data-i18n="accent_pill5"></div><div class="dark-pill" data-i18n="accent_pill6"></div></div></div></div></section>
-<section class="section reveal"><div class="container"><div class="section-head"><h2 data-i18n="why_title"></h2><p data-i18n="why_desc"></p></div><div class="advantages-layout"><article class="card card-feature-main"><h3 data-i18n="adv_main_title"></h3><p data-i18n="adv_main_desc"></p><div class="bullet-pills"><span class="bullet-pill" data-i18n="adv_main_b1"></span><span class="bullet-pill" data-i18n="adv_main_b2"></span><span class="bullet-pill" data-i18n="adv_main_b3"></span></div></article><div class="feature-grid-v12"><article class="card tint-1"><h3 data-i18n="adv1_title"></h3><p data-i18n="adv1_desc"></p></article><article class="card"><h3 data-i18n="adv2_title"></h3><p data-i18n="adv2_desc"></p></article><article class="card"><h3 data-i18n="adv3_title"></h3><p data-i18n="adv3_desc"></p></article><article class="card tint-2"><h3 data-i18n="adv4_title"></h3><p data-i18n="adv4_desc"></p></article><article class="card"><h3 data-i18n="adv5_title"></h3><p data-i18n="adv5_desc"></p></article><article class="card"><h3 data-i18n="adv6_title"></h3><p data-i18n="adv6_desc"></p></article></div></div></div></section>
-<section class="section section-soft reveal" id="how"><div class="container"><div class="section-head"><h2 data-i18n="steps_title"></h2><p data-i18n="steps_desc"></p></div><div class="steps"><article class="card step-card"><div class="number">1</div><h3 data-i18n="step1_title"></h3><p data-i18n="step1_desc"></p></article><article class="card step-card"><div class="number">2</div><h3 data-i18n="step2_title"></h3><p data-i18n="step2_desc"></p></article><article class="card step-card"><div class="number">3</div><h3 data-i18n="step3_title"></h3><p data-i18n="step3_desc"></p></article></div></div></section>
-<section class="section reveal" id="demo"><div class="container showcase"><div class="left-copy"><div class="eyebrow"><span class="eyebrow-dot"></span><span data-i18n="showcase_eyebrow"></span></div><div class="section-head top-gap"><h2 data-i18n="showcase_title"></h2><p data-i18n="showcase_desc"></p></div><div class="feature-list"><div class="mini-feature" data-i18n="mini1"></div><div class="mini-feature" data-i18n="mini2"></div><div class="mini-feature" data-i18n="mini3"></div><div class="mini-feature" data-i18n="mini4"></div></div></div><div class="showcase-demo-shell"><div class="floating-badge" data-i18n="showcase_badge"></div><div class="demo-shell"><div class="demo-topbar"><div class="demo-brand">Qalagan.kz / client page</div><div class="demo-status" data-i18n="showcase_state"></div></div><div class="rotator-stage compact-stage"><div id="showcaseRotator" class="rotator-card"></div></div></div></div></div></section>
-<section class="section section-soft reveal"><div class="container"><div class="section-head"><h2 data-i18n="includes_title"></h2><p data-i18n="includes_desc"></p></div><div class="feature-grid-v12b"><article class="card"><h3 data-i18n="inc1_title"></h3><p data-i18n="inc1_desc"></p></article><article class="card tint-3"><h3 data-i18n="inc2_title"></h3><p data-i18n="inc2_desc"></p></article><article class="card"><h3 data-i18n="inc3_title"></h3><p data-i18n="inc3_desc"></p></article><article class="card"><h3 data-i18n="inc4_title"></h3><p data-i18n="inc4_desc"></p></article><article class="card"><h3 data-i18n="inc5_title"></h3><p data-i18n="inc5_desc"></p></article><article class="card tint-4"><h3 data-i18n="inc6_title"></h3><p data-i18n="inc6_desc"></p></article></div></div></section>
-<section class="section reveal"><div class="container"><div class="section-head"><h2 data-i18n="audience_title"></h2><p data-i18n="audience_desc"></p></div><div class="audience-grid compact-audience"><article class="card compact"><h3 data-i18n="aud1"></h3><p data-i18n="aud1d"></p></article><article class="card compact"><h3 data-i18n="aud2"></h3><p data-i18n="aud2d"></p></article><article class="card compact"><h3 data-i18n="aud3"></h3><p data-i18n="aud3d"></p></article><article class="card compact"><h3 data-i18n="aud4"></h3><p data-i18n="aud4d"></p></article><article class="card compact"><h3 data-i18n="aud5"></h3><p data-i18n="aud5d"></p></article><article class="card compact"><h3 data-i18n="aud6"></h3><p data-i18n="aud6d"></p></article></div></div></section>
-<section class="section section-dark reveal" id="pricing"><div class="container"><div class="pricing-head"><div class="eyebrow dark"><span class="eyebrow-dot light"></span><span data-i18n="pricing_label"></span></div><h2 data-i18n="pricing_title"></h2><p data-i18n="pricing_desc"></p></div><div class="pricing-grid"><article class="plan-card"><div class="plan-name" data-i18n="plan_start"></div><div class="plan-price" data-i18n="start_price"></div><div class="plan-type" data-i18n="plan_launch"></div><p class="plan-desc" data-i18n="start_desc"></p><ul class="plan-list"><li data-i18n="start_f1"></li><li data-i18n="start_f2"></li><li data-i18n="start_f3"></li><li data-i18n="start_f4"></li></ul></article><article class="plan-card featured"><div class="plan-tag" data-i18n="recommended"></div><div class="plan-name" data-i18n="plan_pro"></div><div class="plan-price" data-i18n="pro_price"></div><div class="plan-type" data-i18n="plan_launch"></div><p class="plan-desc" data-i18n="pro_desc"></p><ul class="plan-list"><li data-i18n="pro_f1"></li><li data-i18n="pro_f2"></li><li data-i18n="pro_f3"></li><li data-i18n="pro_f4"></li></ul></article><article class="plan-card"><div class="plan-name" data-i18n="plan_studio"></div><div class="plan-price" data-i18n="studio_price"></div><div class="plan-type" data-i18n="plan_launch"></div><p class="plan-desc" data-i18n="studio_desc"></p><ul class="plan-list"><li data-i18n="studio_f1"></li><li data-i18n="studio_f2"></li><li data-i18n="studio_f3"></li><li data-i18n="studio_f4"></li></ul></article><article class="plan-card custom-dark"><div class="plan-name" data-i18n="plan_custom"></div><div class="plan-price" data-i18n="custom_price"></div><div class="plan-type" data-i18n="plan_launch"></div><p class="plan-desc" data-i18n="custom_desc"></p><ul class="plan-list"><li data-i18n="custom_f1"></li><li data-i18n="custom_f2"></li><li data-i18n="custom_f3"></li><li data-i18n="custom_f4"></li></ul></article></div><div class="support-band"><div><h3 data-i18n="support_title"></h3><p data-i18n="support_desc"></p></div><div class="support-price" data-i18n="support_price"></div></div></div></section>
-<section class="section section-soft reveal"><div class="container"><div class="section-head"><h2 data-i18n="faq_title"></h2><p data-i18n="faq_desc"></p></div><div class="faq-grid compact-faq"><article class="card faq-item compact"><h3 data-i18n="faq1_q"></h3><p data-i18n="faq1_a"></p></article><article class="card faq-item compact"><h3 data-i18n="faq2_q"></h3><p data-i18n="faq2_a"></p></article><article class="card faq-item compact"><h3 data-i18n="faq3_q"></h3><p data-i18n="faq3_a"></p></article><article class="card faq-item compact"><h3 data-i18n="faq4_q"></h3><p data-i18n="faq4_a"></p></article></div></div></section>
+  <section class="hero-section reveal">
+    <div class="hero-backdrop"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="hero-badge" data-i18n="hero_badge"></div>
+        <h1><span data-i18n="hero_title_1"></span><br><span data-i18n="hero_title_2"></span></h1>
+        <p class="hero-subtitle" data-i18n="hero_desc"></p>
+        <div class="hero-actions">
+          <a href="#connect" class="btn btn-primary" data-i18n="hero_primary"></a>
+          <a href="#examples" class="btn btn-secondary" data-i18n="hero_secondary"></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="hero-stack" id="heroStack"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="value-strip reveal">
+    <div class="container value-strip-grid">
+      <article class="value-card">
+        <strong data-i18n="value1_title"></strong>
+        <span data-i18n="value1_desc"></span>
+      </article>
+      <article class="value-card">
+        <strong data-i18n="value2_title"></strong>
+        <span data-i18n="value2_desc"></span>
+      </article>
+      <article class="value-card">
+        <strong data-i18n="value3_title"></strong>
+        <span data-i18n="value3_desc"></span>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-light reveal" id="problem">
+    <div class="container">
+      <div class="section-head narrow-head centered">
+        <h2 data-i18n="problem_title"></h2>
+        <p data-i18n="problem_desc"></p>
+      </div>
+      <div class="problem-grid">
+        <article class="soft-card problem-card">
+          <div class="problem-visual threads-visual"><span></span><span></span><span></span></div>
+          <h3 data-i18n="problem1_title"></h3>
+          <p data-i18n="problem1_desc"></p>
+        </article>
+        <article class="soft-card problem-card">
+          <div class="problem-visual slots-visual"><span></span><span></span><span></span></div>
+          <h3 data-i18n="problem2_title"></h3>
+          <p data-i18n="problem2_desc"></p>
+        </article>
+        <article class="soft-card problem-card">
+          <div class="problem-visual lost-visual"><span></span><span></span><span></span></div>
+          <h3 data-i18n="problem3_title"></h3>
+          <p data-i18n="problem3_desc"></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark-accent reveal">
+    <div class="container">
+      <div class="accent-panel">
+        <div>
+          <div class="section-kicker light" data-i18n="positioning_kicker"></div>
+          <h2 data-i18n="positioning_title"></h2>
+          <p data-i18n="positioning_desc"></p>
+        </div>
+        <div class="accent-pills">
+          <span data-i18n="positioning_pill1"></span>
+          <span data-i18n="positioning_pill2"></span>
+          <span data-i18n="positioning_pill3"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light reveal" id="how">
+    <div class="container">
+      <div class="section-head narrow-head centered">
+        <div class="section-kicker" data-i18n="how_kicker"></div>
+        <h2 data-i18n="how_title"></h2>
+        <p data-i18n="how_desc"></p>
+      </div>
+      <div class="steps-grid">
+        <article class="soft-card step-card"><div class="step-number">1</div><h3 data-i18n="step1_title"></h3><p data-i18n="step1_desc"></p></article>
+        <article class="soft-card step-card"><div class="step-number">2</div><h3 data-i18n="step2_title"></h3><p data-i18n="step2_desc"></p></article>
+        <article class="soft-card step-card"><div class="step-number">3</div><h3 data-i18n="step3_title"></h3><p data-i18n="step3_desc"></p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light section-examples reveal" id="examples">
+    <div class="container examples-grid">
+      <div class="examples-copy">
+        <div class="section-kicker" data-i18n="examples_kicker"></div>
+        <h2 data-i18n="examples_title"></h2>
+        <p data-i18n="examples_desc"></p>
+        <div class="example-points">
+          <div class="example-point" data-i18n="examples_point1"></div>
+          <div class="example-point" data-i18n="examples_point2"></div>
+          <div class="example-point" data-i18n="examples_point3"></div>
+        </div>
+      </div>
+      <div class="examples-visual">
+        <div class="showcase-caption" data-i18n="examples_caption"></div>
+        <div class="mobile-display">
+          <div class="mobile-display-head">
+            <span data-i18n="examples_phone_label"></span>
+            <span data-i18n="examples_phone_hint"></span>
+          </div>
+          <div class="showcase-stage" id="showcaseRotator"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light reveal" id="audience">
+    <div class="container">
+      <div class="section-head narrow-head centered">
+        <div class="section-kicker" data-i18n="audience_kicker"></div>
+        <h2 data-i18n="audience_title"></h2>
+        <p data-i18n="audience_desc"></p>
+      </div>
+      <div class="audience-grid">
+        <article class="soft-card"><h3 data-i18n="aud1_title"></h3><p data-i18n="aud1_desc"></p></article>
+        <article class="soft-card"><h3 data-i18n="aud2_title"></h3><p data-i18n="aud2_desc"></p></article>
+        <article class="soft-card"><h3 data-i18n="aud3_title"></h3><p data-i18n="aud3_desc"></p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light reveal" id="pricing">
+    <div class="container">
+      <div class="section-head narrow-head centered">
+        <div class="section-kicker" data-i18n="pricing_kicker"></div>
+        <h2 data-i18n="pricing_title"></h2>
+        <p data-i18n="pricing_desc"></p>
+      </div>
+      <div class="pricing-grid">
+        <article class="price-card">
+          <div class="price-name" data-i18n="plan_start"></div>
+          <div class="price-launch" data-i18n="plan_start_launch"></div>
+          <div class="price-month" data-i18n="plan_start_month"></div>
+          <p class="price-text" data-i18n="plan_start_desc"></p>
+          <ul>
+            <li data-i18n="plan_start_f1"></li>
+            <li data-i18n="plan_start_f2"></li>
+            <li data-i18n="plan_start_f3"></li>
+            <li data-i18n="plan_start_f4"></li>
+          </ul>
+          <a href="#connect" class="btn btn-lightwide" data-i18n="pricing_cta"></a>
+        </article>
+        <article class="price-card featured">
+          <div class="price-badge" data-i18n="pricing_badge"></div>
+          <div class="price-name" data-i18n="plan_pro"></div>
+          <div class="price-launch" data-i18n="plan_pro_launch"></div>
+          <div class="price-month" data-i18n="plan_pro_month"></div>
+          <p class="price-text" data-i18n="plan_pro_desc"></p>
+          <ul>
+            <li data-i18n="plan_pro_f1"></li>
+            <li data-i18n="plan_pro_f2"></li>
+            <li data-i18n="plan_pro_f3"></li>
+            <li data-i18n="plan_pro_f4"></li>
+          </ul>
+          <a href="#connect" class="btn btn-primarywide" data-i18n="pricing_cta"></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light reveal" id="faq">
+    <div class="container">
+      <div class="section-head narrow-head centered">
+        <div class="section-kicker" data-i18n="faq_kicker"></div>
+        <h2 data-i18n="faq_title"></h2>
+      </div>
+      <div class="faq-grid">
+        <article class="soft-card faq-item"><h3 data-i18n="faq1_q"></h3><p data-i18n="faq1_a"></p></article>
+        <article class="soft-card faq-item"><h3 data-i18n="faq2_q"></h3><p data-i18n="faq2_a"></p></article>
+        <article class="soft-card faq-item"><h3 data-i18n="faq3_q"></h3><p data-i18n="faq3_a"></p></article>
+        <article class="soft-card faq-item"><h3 data-i18n="faq4_q"></h3><p data-i18n="faq4_a"></p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light reveal" id="connect">
+    <div class="container connect-panel">
+      <div>
+        <div class="section-kicker" data-i18n="connect_kicker"></div>
+        <h2 data-i18n="connect_title"></h2>
+        <p data-i18n="connect_desc"></p>
+      </div>
+      <div class="connect-actions">
+        <a href="#connect" class="btn btn-primary" data-i18n="connect_primary"></a>
+        <a href="#examples" class="btn btn-secondary light-secondary" data-i18n="connect_secondary"></a>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="container footer reveal"><div class="divider"></div><div class="foot-row"><div>Qalagan.kz</div><div data-i18n="footer_copy"></div></div></footer>
-<script id="translations-json" type="application/json">{"ru": {"nav_cta": "Тарифы", "hero_title": "Ваши услуги, цены и запись — в одной аккуратной ссылке", "hero_desc": "Qalagan помогает специалистам сферы услуг красиво упаковать свои услуги в персональную страницу записи без CRM, без чужих конкурентов рядом и без обязательной регистрации для клиента.", "hero_primary": "Посмотреть пример", "hero_secondary": "Как это работает", "demo_status": "Мобильная версия • адаптивно", "trust_title": "Подходит для специалистов, которые работают по записи", "trust_desc": "Qalagan можно адаптировать под разные направления услуг, где важно показать услуги, цены и свободное время в одной ссылке.", "trust1": "Барберы", "trust2": "Салоны красоты", "trust3": "Маникюр", "trust4": "Косметология", "trust5": "Массаж", "trust6": "Консультации", "problem_title": "Сейчас запись часто теряется в переписках", "problem1": "Клиент пишет в WhatsApp или Instagram и спрашивает цену.", "problem2": "Потом спрашивает свободное время и ждёт ответа.", "problem3": "Переписка затягивается, и часть клиентов просто уходит.", "problem4": "Нет одной аккуратной ссылки, где всё уже показано.", "solution_title": "Qalagan собирает всё в одну страницу", "solution_desc": "Услуги, цены, свободные даты, время и простая форма записи — в одном понятном и аккуратном интерфейсе.", "accent_label": "Ключевое отличие", "accent_title": "Не CRM. Не маркетплейс. Ваше собственное пространство для записи.", "accent_desc": "Клиент попадает не на чужую площадку, а прямо к вам: видит только ваши услуги, ваши цены и вашу запись.", "accent_pill1": "Без чужих мастеров рядом", "accent_pill2": "Без регистрации клиента", "accent_pill3": "Без тяжёлой CRM", "accent_pill4": "Одна ссылка для услуг и записи", "accent_pill5": "Работает в WhatsApp / Instagram / QR", "accent_pill6": "Индивидуально под специалиста", "why_title": "Почему Qalagan отличается от обычной онлайн-записи", "why_desc": "Большинство решений либо перегружены как CRM, либо уводят клиента на общую площадку. Qalagan даёт специалисту свою отдельную страницу записи — простую, понятную и сфокусированную только на его услугах.", "adv_main_title": "Ваш собственный digital-инструмент, а не чужая площадка", "adv_main_desc": "Qalagan помогает перейти от хаотичных сообщений в директе и WhatsApp к понятной, современной и удобной странице записи.", "adv_main_b1": "Только ваши услуги", "adv_main_b2": "Только ваш бренд", "adv_main_b3": "Только ваша запись", "adv1_title": "Своя витрина без конкурентов", "adv1_desc": "Клиент видит только ваши услуги, а не соседние салоны, мастеров и альтернативы.", "adv2_title": "Без лишней CRM", "adv2_desc": "Никаких сложных кабинетов, перегруженных функций и тяжёлого внедрения.", "adv3_title": "Без регистрации для клиента", "adv3_desc": "Человек просто открывает ссылку, смотрит услуги, выбирает время и отправляет заявку.", "adv4_title": "Одна ссылка вместо хаоса", "adv4_desc": "Услуги, цены, свободное время и запись собраны в одном аккуратном месте.", "adv5_title": "Работает там, где уже есть клиенты", "adv5_desc": "Ссылку можно добавить в WhatsApp, Telegram, Instagram, 2GIS, QR-код и шапку профиля.", "adv6_title": "Индивидуально под ваш бизнес", "adv6_desc": "Страница собирается под конкретного специалиста или студию, а не как безликий шаблон.", "steps_title": "Как это работает", "steps_desc": "Ты не настраиваешь сложную систему сам. Я собираю страницу индивидуально под твой формат работы.", "step1_title": "Вы отправляете информацию", "step1_desc": "Услуги, цены, график, контакты, адрес, фото и краткое описание.", "step2_title": "Я настраиваю страницу", "step2_desc": "Создаю аккуратную персональную страницу записи под вашу сферу и задачи.", "step3_title": "Вы получаете ссылку", "step3_desc": "Добавляете её в WhatsApp, Instagram, Telegram, 2GIS, QR или шапку профиля.", "showcase_eyebrow": "Пример того, как это может выглядеть", "showcase_title": "Чистая и понятная страница записи для ваших клиентов", "showcase_desc": "Без перегруженной CRM, без лишних функций и без длинных переписок. Клиент сразу видит, что вы предлагаете и когда можно записаться.", "mini1": "Услуги и цены", "mini2": "Выбор даты и времени", "mini3": "Мобильная адаптация", "mini4": "Добавление в QR и соцсети", "showcase_badge": "Demo preview", "showcase_state": "Индивидуально под специалиста", "includes_title": "Что входит в Qalagan", "includes_desc": "Всё, что нужно, чтобы специалист мог показать услуги, цены и запись в одном понятном интерфейсе.", "inc1_title": "Персональная страница", "inc1_desc": "Отдельная страница с вашим названием, описанием и подачей услуг.", "inc2_title": "Услуги и цены", "inc2_desc": "Понятная структура услуг, длительности и стоимости без лишней перегрузки.", "inc3_title": "Дата и время", "inc3_desc": "Показ свободных слотов и простая логика записи для клиента.", "inc4_title": "Мобильная версия", "inc4_desc": "Страница удобно открывается с телефона, где вас чаще всего и находят.", "inc5_title": "Ссылка и QR", "inc5_desc": "Можно добавить в WhatsApp, Telegram, Instagram, 2GIS, визитки и QR-код.", "inc6_title": "Индивидуальная настройка", "inc6_desc": "Решение собирается под вашу сферу, а не копируется как шаблон для всех.", "audience_title": "Для кого подходит", "audience_desc": "Qalagan подходит тем, кто работает по записи и хочет аккуратно упаковать свои услуги в одну современную ссылку.", "aud1": "Beauty", "aud1d": "Салоны красоты, бровисты, лэшмейкеры, мастера маникюра, косметологи.", "aud2": "Barbershop", "aud2d": "Барберы, мужские мастера и небольшие студии с записью по времени.", "aud3": "Wellness", "aud3d": "Массажисты, студии ухода, wellness-специалисты и частные практики.", "aud4": "Education", "aud4d": "Репетиторы, преподаватели, наставники и индивидуальные занятия.", "aud5": "Consulting", "aud5d": "Консультанты, эксперты и специалисты, работающие по слотам времени.", "aud6": "Other services", "aud6d": "Любые специалисты, которым нужна простая и красивая запись по ссылке.", "pricing_label": "Тарифы Qalagan", "pricing_title": "Разовый запуск страницы записи под ваш формат работы", "pricing_desc": "Все тарифы включают полную локализацию RU / KZ / EN. Основная оплата — за создание и запуск. Сопровождение и обновления подключаются отдельно при необходимости.", "plan_start": "Start", "plan_pro": "Pro", "plan_studio": "Studio", "plan_custom": "Custom", "plan_launch": "разовый запуск", "start_price": "39 000 ₸", "pro_price": "59 000 ₸", "studio_price": "89 000 ₸", "custom_price": "Индивидуально", "start_desc": "Для частного специалиста, которому нужна понятная и аккуратная страница записи.", "pro_desc": "Для специалиста, которому нужна более сильная упаковка и расширенная структура страницы.", "studio_desc": "Для студий и более сложной структуры услуг.", "custom_desc": "Для нестандартных задач, нескольких специалистов и сложной сборки.", "recommended": "Рекомендуемый", "start_f1": "до 12 услуг", "start_f2": "базовая структура записи", "start_f3": "страница + QR + ссылка", "start_f4": "1 раунд правок", "pro_f1": "до 25 услуг", "pro_f2": "усиленная подача страницы", "pro_f3": "расширенные блоки и структура", "pro_f4": "2 раунда правок", "studio_f1": "несколько категорий услуг", "studio_f2": "адаптация под студию", "studio_f3": "приоритетные правки", "studio_f4": "более глубокая настройка", "custom_f1": "несколько специалистов", "custom_f2": "индивидуальная логика", "custom_f3": "гибкая структура", "custom_f4": "отдельный расчёт", "support_title": "Сопровождение", "support_price": "от 7 000 ₸ / месяц", "support_desc": "Обновление услуг, цен, текста, мелкие визуальные правки и поддержка страницы по запросу.", "faq_title": "Частые вопросы", "faq_desc": "Коротко и по делу о том, что обычно спрашивают перед подключением.", "faq1_q": "Это CRM?", "faq1_a": "Нет. Qalagan — это не тяжёлая CRM, а простая персональная страница записи для специалиста.", "faq2_q": "Это маркетплейс?", "faq2_a": "Нет. Клиент не попадает в общий каталог с другими мастерами. Он видит только ваши услуги.", "faq3_q": "Клиенту нужно регистрироваться?", "faq3_a": "Нет. Клиент просто открывает ссылку, выбирает услугу и отправляет запись.", "faq4_q": "Можно ли добавить ссылку в Instagram и WhatsApp?", "faq4_a": "Да. Страницу можно использовать в Instagram bio, WhatsApp, Telegram, 2GIS, QR-коде и других точках контакта с клиентом.", "footer_copy": "Персональная страница записи для специалистов сферы услуг"}, "kk": {"nav_cta": "Тарифтер", "hero_eyebrow": "CRM-сіз және артық күрделіліксіз жазылуға арналған жеке сілтеме", "hero_title": "Қызметтеріңіз, бағаларыңыз және жазылу — бір ұқыпты сілтемеде", "hero_desc": "Qalagan мамандарға қызметтерін CRM-сіз, бөгде бәсекелестерсіз және клиентке міндетті тіркеусіз жеке жазылу бетіне әдемі жинауға көмектеседі.", "hero_primary": "Үлгіні көру", "hero_secondary": "Бұл қалай жұмыс істейді", "demo_status": "Мобильді нұсқа • бейімделген", "trust_title": "Жазылу арқылы жұмыс істейтін мамандарға сай келеді", "trust_desc": "Qalagan-ды қызметтерді, бағаларды және бос уақытты бір сілтемеде көрсету маңызды әртүрлі бағыттарға бейімдеуге болады.", "trust1": "Барберлер", "trust2": "Сұлулық салондары", "trust3": "Маникюр", "trust4": "Косметология", "trust5": "Массаж", "trust6": "Консультации", "problem_title": "Қазір жазылу көбіне хат алмасуда жоғалып кетеді", "problem1": "Клиент пишет в WhatsApp или Instagram и спрашивает цену.", "problem2": "Потом спрашивает свободное время и ждёт ответа.", "problem3": "Переписка затягивается, и часть клиентов просто уходит.", "problem4": "Нет одной аккуратной ссылки, где всё уже показано.", "solution_title": "Qalagan бәрін бір бетке жинайды", "solution_desc": "Қызметтер, бағалар, бос күндер, уақыт және қарапайым жазылу формасы — бір түсінікті әрі ұқыпты интерфейсте.", "accent_label": "Негізгі айырмашылық", "accent_title": "CRM емес. Маркетплейс емес. Жазылуға арналған өз кеңістігіңіз.", "accent_desc": "Клиент бөтен алаңға емес, тікелей сізге келеді: тек сіздің қызметтеріңізді, бағаларыңызды және жазылуды көреді.", "accent_pill1": "Бөгде мамандар жоқ", "accent_pill2": "Клиентке тіркелу қажет емес", "accent_pill3": "Ауыр CRM жоқ", "accent_pill4": "Қызметтер мен жазылуға бір сілтеме", "accent_pill5": "WhatsApp / Instagram / QR-да жұмыс істейді", "accent_pill6": "Маманға жеке бейімделген", "why_title": "Qalagan неге қарапайым онлайн-жазылудан өзгеше", "why_desc": "Көптеген шешімдер не CRM сияқты тым күрделі, не клиентті ортақ алаңға алып кетеді. Qalagan маманға тек өз қызметтеріне бағытталған жеке жазылу бетін береді.", "adv_main_title": "Бұл бөтен алаң емес, сіздің жеке digital-құралыңыз", "adv_main_desc": "Qalagan дирек пен WhatsApp-тағы ретсіз хат алмасудан түсінікті, заманауи және ыңғайлы жазылу бетіне көшуге көмектеседі.", "adv_main_b1": "Тек сіздің қызметтеріңіз", "adv_main_b2": "Тек сіздің брендіңіз", "adv_main_b3": "Тек сіздің жазылуыңыз", "adv1_title": "Своя витрина без конкурентов", "adv1_desc": "Клиент видит только ваши услуги, а не соседние салоны, мастеров и альтернативы.", "adv2_title": "Без лишней CRM", "adv2_desc": "Никаких сложных кабинетов, перегруженных функций и тяжёлого внедрения.", "adv3_title": "Без регистрации для клиента", "adv3_desc": "Человек просто открывает ссылку, смотрит услуги, выбирает время и отправляет заявку.", "adv4_title": "Одна ссылка вместо хаоса", "adv4_desc": "Услуги, цены, свободное время и запись собраны в одном аккуратном месте.", "adv5_title": "Работает там, где уже есть клиенты", "adv5_desc": "Ссылку можно добавить в WhatsApp, Telegram, Instagram, 2GIS, QR-код и шапку профиля.", "adv6_title": "Индивидуально под ваш бизнес", "adv6_desc": "Страница собирается под конкретного специалиста или студию, а не как безликий шаблон.", "steps_title": "Бұл қалай жұмыс істейді", "steps_desc": "Күрделі жүйені өзіңіз баптамайсыз. Мен бетті сіздің жұмыс форматыңызға сай жеке жинаймын.", "step1_title": "Сіз ақпарат жібересіз", "step1_desc": "Услуги, цены, график, контакты, адрес, фото и краткое описание.", "step2_title": "Мен бетті баптаймын", "step2_desc": "Создаю аккуратную персональную страницу записи под вашу сферу и задачи.", "step3_title": "Сіз сілтемені аласыз", "step3_desc": "Добавляете её в WhatsApp, Instagram, Telegram, 2GIS, QR или шапку профиля.", "showcase_eyebrow": "Бұл қалай көрінуі мүмкін", "showcase_title": "Клиенттеріңізге арналған таза әрі түсінікті жазылу беті", "showcase_desc": "Артық CRM-сіз, қажетсіз функцияларсыз және ұзақ хат алмасусыз.", "mini1": "Қызметтер мен бағалар", "mini2": "Күн мен уақытты таңдау", "mini3": "Мобильді бейімделу", "mini4": "QR және әлеуметтік желілерге қосу", "showcase_badge": "Demo preview", "showcase_state": "Маманға жеке бейімделген", "includes_title": "Qalagan құрамына не кіреді", "includes_desc": "Маманға қызметтерді, бағаларды және жазылуды бір түсінікті интерфейсте көрсетуге қажет нәрсенің бәрі.", "inc1_title": "Персональная страница", "inc1_desc": "Отдельная страница с вашим названием, описанием и подачей услуг.", "inc2_title": "Услуги и цены", "inc2_desc": "Понятная структура услуг, длительности и стоимости без лишней перегрузки.", "inc3_title": "Дата и время", "inc3_desc": "Показ свободных слотов и простая логика записи для клиента.", "inc4_title": "Мобильная версия", "inc4_desc": "Страница удобно открывается с телефона, где вас чаще всего и находят.", "inc5_title": "Ссылка и QR", "inc5_desc": "Можно добавить в WhatsApp, Telegram, Instagram, 2GIS, визитки и QR-код.", "inc6_title": "Индивидуальная настройка", "inc6_desc": "Решение собирается под вашу сферу, а не копируется как шаблон для всех.", "audience_title": "Кімге сай келеді", "audience_desc": "Qalagan жазылу арқылы жұмыс істейтін және өз қызметтерін бір заманауи сілтемеге жинағысы келетіндерге сай келеді.", "aud1": "Beauty", "aud1d": "Салоны красоты, бровисты, лэшмейкеры, мастера маникюра, косметологи.", "aud2": "Barbershop", "aud2d": "Барберы, мужские мастера и небольшие студии с записью по времени.", "aud3": "Wellness", "aud3d": "Массажисты, студии ухода, wellness-специалисты и частные практики.", "aud4": "Education", "aud4d": "Репетиторы, преподаватели, наставники и индивидуальные занятия.", "aud5": "Consulting", "aud5d": "Консультанты, эксперты и специалисты, работающие по слотам времени.", "aud6": "Other services", "aud6d": "Любые специалисты, которым нужна простая и красивая запись по ссылке.", "pricing_label": "Qalagan тарифтері", "pricing_title": "Жұмыс форматыңызға сай жазылу бетін бір реттік іске қосу", "pricing_desc": "Барлық тарифтерге RU / KZ / EN локализациясы кіреді. Негізгі төлем — жасау мен іске қосу үшін. Қолдау бөлек қосылады.", "plan_start": "Start", "plan_pro": "Pro", "plan_studio": "Studio", "plan_custom": "Custom", "plan_launch": "бір реттік іске қосу", "start_price": "39 000 ₸", "pro_price": "59 000 ₸", "studio_price": "89 000 ₸", "custom_price": "Индивидуально", "start_desc": "Для частного специалиста, которому нужна понятная и аккуратная страница записи.", "pro_desc": "Для специалиста, которому нужна более сильная упаковка и расширенная структура страницы.", "studio_desc": "Для студий и более сложной структуры услуг.", "custom_desc": "Для нестандартных задач, нескольких специалистов и сложной сборки.", "recommended": "Рекомендуемый", "start_f1": "до 12 услуг", "start_f2": "базовая структура записи", "start_f3": "страница + QR + ссылка", "start_f4": "1 раунд правок", "pro_f1": "до 25 услуг", "pro_f2": "усиленная подача страницы", "pro_f3": "расширенные блоки и структура", "pro_f4": "2 раунда правок", "studio_f1": "несколько категорий услуг", "studio_f2": "адаптация под студию", "studio_f3": "приоритетные правки", "studio_f4": "более глубокая настройка", "custom_f1": "несколько специалистов", "custom_f2": "индивидуальная логика", "custom_f3": "гибкая структура", "custom_f4": "отдельный расчёт", "support_title": "Қолдау", "support_price": "айына 7 000 ₸ бастап", "support_desc": "Қызметтерді, бағаларды, мәтіндерді жаңарту және ұсақ визуалдық түзетулер.", "faq_title": "Жиі қойылатын сұрақтар", "faq_desc": "Қысқа әрі нақты жауаптар.", "faq1_q": "Это CRM?", "faq1_a": "Нет. Qalagan — это не тяжёлая CRM, а простая персональная страница записи для специалиста.", "faq2_q": "Это маркетплейс?", "faq2_a": "Нет. Клиент не попадает в общий каталог с другими мастерами. Он видит только ваши услуги.", "faq3_q": "Клиенту нужно регистрироваться?", "faq3_a": "Нет. Клиент просто открывает ссылку, выбирает услугу и отправляет запись.", "faq4_q": "Можно ли добавить ссылку в Instagram и WhatsApp?", "faq4_a": "Да. Страницу можно использовать в Instagram bio, WhatsApp, Telegram, 2GIS, QR-коде и других точках контакта с клиентом.", "footer_copy": "Қызмет көрсету саласындағы мамандарға арналған жеке жазылу беті"}, "en": {"nav_cta": "Pricing", "hero_eyebrow": "A personal booking link without CRM and unnecessary complexity", "hero_title": "Your services, prices and booking — in one clean link", "hero_desc": "Qalagan helps service professionals package their services into a personal booking page without CRM, without competing providers next to them and without mandatory client registration.", "hero_primary": "See example", "hero_secondary": "How it works", "demo_status": "Mobile version • responsive", "trust_title": "Built for professionals who work by appointment", "trust_desc": "Qalagan can be adapted to different service categories where it matters to show services, prices and available time in one link.", "trust1": "Барберы", "trust2": "Салоны красоты", "trust3": "Маникюр", "trust4": "Косметология", "trust5": "Массаж", "trust6": "Консультации", "problem_title": "Bookings often get lost in chats", "problem1": "Клиент пишет в WhatsApp или Instagram и спрашивает цену.", "problem2": "Потом спрашивает свободное время и ждёт ответа.", "problem3": "Переписка затягивается, и часть клиентов просто уходит.", "problem4": "Нет одной аккуратной ссылки, где всё уже показано.", "solution_title": "Qalagan brings everything into one page", "solution_desc": "Services, pricing, available dates, time slots and a simple booking form — in one clear and clean interface.", "accent_label": "Key difference", "accent_title": "Not a CRM. Not a marketplace. Your own space for booking.", "accent_desc": "The client comes directly to you and sees only your services, your prices and your booking flow.", "accent_pill1": "No competing providers nearby", "accent_pill2": "No client registration", "accent_pill3": "No heavy CRM", "accent_pill4": "One link for services and booking", "accent_pill5": "Works in WhatsApp / Instagram / QR", "accent_pill6": "Tailored to the specialist", "why_title": "Why Qalagan is different from typical online booking", "why_desc": "Most solutions are either overloaded like a CRM or send the client to a shared marketplace. Qalagan gives the specialist a separate booking page focused only on their own services.", "adv_main_title": "Your own digital tool, not someone else’s platform", "adv_main_desc": "Qalagan helps you move from chaotic DMs and WhatsApp messages to a clear, modern and practical booking page.", "adv_main_b1": "Only your services", "adv_main_b2": "Only your brand", "adv_main_b3": "Only your booking flow", "adv1_title": "Своя витрина без конкурентов", "adv1_desc": "Клиент видит только ваши услуги, а не соседние салоны, мастеров и альтернативы.", "adv2_title": "Без лишней CRM", "adv2_desc": "Никаких сложных кабинетов, перегруженных функций и тяжёлого внедрения.", "adv3_title": "Без регистрации для клиента", "adv3_desc": "Человек просто открывает ссылку, смотрит услуги, выбирает время и отправляет заявку.", "adv4_title": "Одна ссылка вместо хаоса", "adv4_desc": "Услуги, цены, свободное время и запись собраны в одном аккуратном месте.", "adv5_title": "Работает там, где уже есть клиенты", "adv5_desc": "Ссылку можно добавить в WhatsApp, Telegram, Instagram, 2GIS, QR-код и шапку профиля.", "adv6_title": "Индивидуально под ваш бизнес", "adv6_desc": "Страница собирается под конкретного специалиста или студию, а не как безликий шаблон.", "steps_title": "How it works", "steps_desc": "You do not have to set up a complicated system yourself. I build the page individually for your work format.", "step1_title": "You send the information", "step1_desc": "Услуги, цены, график, контакты, адрес, фото и краткое описание.", "step2_title": "I set up the page", "step2_desc": "Создаю аккуратную персональную страницу записи под вашу сферу и задачи.", "step3_title": "You get the link", "step3_desc": "Добавляете её в WhatsApp, Instagram, Telegram, 2GIS, QR или шапку профиля.", "showcase_eyebrow": "An example of how it can look", "showcase_title": "A clean and clear booking page for your clients", "showcase_desc": "No overloaded CRM, no unnecessary features and no long back-and-forth chats.", "mini1": "Services and pricing", "mini2": "Date and time selection", "mini3": "Mobile responsive", "mini4": "Add to QR and social channels", "showcase_badge": "Demo preview", "showcase_state": "Tailored to the specialist", "includes_title": "What is included in Qalagan", "includes_desc": "Everything a specialist needs to present services, prices and booking in one clear interface.", "inc1_title": "Персональная страница", "inc1_desc": "Отдельная страница с вашим названием, описанием и подачей услуг.", "inc2_title": "Услуги и цены", "inc2_desc": "Понятная структура услуг, длительности и стоимости без лишней перегрузки.", "inc3_title": "Дата и время", "inc3_desc": "Показ свободных слотов и простая логика записи для клиента.", "inc4_title": "Мобильная версия", "inc4_desc": "Страница удобно открывается с телефона, где вас чаще всего и находят.", "inc5_title": "Ссылка и QR", "inc5_desc": "Можно добавить в WhatsApp, Telegram, Instagram, 2GIS, визитки и QR-код.", "inc6_title": "Индивидуальная настройка", "inc6_desc": "Решение собирается под вашу сферу, а не копируется как шаблон для всех.", "audience_title": "Who it is for", "audience_desc": "Qalagan is built for professionals who work by appointment and want to package their services into one modern link.", "aud1": "Beauty", "aud1d": "Салоны красоты, бровисты, лэшмейкеры, мастера маникюра, косметологи.", "aud2": "Barbershop", "aud2d": "Барберы, мужские мастера и небольшие студии с записью по времени.", "aud3": "Wellness", "aud3d": "Массажисты, студии ухода, wellness-специалисты и частные практики.", "aud4": "Education", "aud4d": "Репетиторы, преподаватели, наставники и индивидуальные занятия.", "aud5": "Consulting", "aud5d": "Консультанты, эксперты и специалисты, работающие по слотам времени.", "aud6": "Other services", "aud6d": "Любые специалисты, которым нужна простая и красивая запись по ссылке.", "pricing_label": "Qalagan pricing", "pricing_title": "One-time launch of your booking page", "pricing_desc": "All plans include full RU / KZ / EN localization. The main payment is for creation and launch. Ongoing support can be added separately.", "plan_start": "Start", "plan_pro": "Pro", "plan_studio": "Studio", "plan_custom": "Custom", "plan_launch": "one-time launch", "start_price": "39 000 ₸", "pro_price": "59 000 ₸", "studio_price": "89 000 ₸", "custom_price": "Индивидуально", "start_desc": "For solo specialists who need a clear and clean booking page.", "pro_desc": "For specialists who need stronger packaging and a richer page structure.", "studio_desc": "For studios and more complex service structure.", "custom_desc": "For custom builds, multiple specialists and non-standard tasks.", "recommended": "Recommended", "start_f1": "до 12 услуг", "start_f2": "базовая структура записи", "start_f3": "страница + QR + ссылка", "start_f4": "1 раунд правок", "pro_f1": "до 25 услуг", "pro_f2": "усиленная подача страницы", "pro_f3": "расширенные блоки и структура", "pro_f4": "2 раунда правок", "studio_f1": "несколько категорий услуг", "studio_f2": "адаптация под студию", "studio_f3": "приоритетные правки", "studio_f4": "более глубокая настройка", "custom_f1": "несколько специалистов", "custom_f2": "индивидуальная логика", "custom_f3": "гибкая структура", "custom_f4": "отдельный расчёт", "support_title": "Support", "support_price": "from 7,000 ₸ / month", "support_desc": "Updating services, prices, text, small visual edits and page support when needed.", "faq_title": "Frequently asked questions", "faq_desc": "Short and clear answers to the questions people usually ask before getting started.", "faq1_q": "Is this a CRM?", "faq1_a": "No. Qalagan is not a heavy CRM. It is a simple personal booking page for a specialist.", "faq2_q": "Is this a marketplace?", "faq2_a": "No. The client does not enter a shared catalog with other providers. They see only your services.", "faq3_q": "Does the client need to register?", "faq3_a": "No. The client simply opens the link, chooses a service and sends the request.", "faq4_q": "Can I add the link to Instagram and WhatsApp?", "faq4_a": "Yes. The page can be used in Instagram bio, WhatsApp, Telegram, 2GIS, QR code and other touchpoints.", "footer_copy": "A personal booking page for service professionals"}}</script>
-<script id="specialists-json" type="application/json">{"hero": {"ru": [{"theme": "theme-charcoal", "label": "Персональная страница записи", "title": "Барбершоп на районе", "caption": "Услуги, цены, свободное время и запись", "chip1": "Instagram / WhatsApp / QR", "chip2": "Без регистрации для клиента", "services": [["Мужская стрижка", "50 минут", "7 000 ₸"], ["Стрижка + борода", "80 минут", "10 000 ₸"], ["Камуфляж седины", "40 минут", "6 000 ₸"]], "slots": ["10:00", "11:30", "12:00", "14:00", "15:30", "17:00"], "active": 0, "busy": [2], "timesTitle": "Свободное время", "day": "Сегодня", "formTitle": "Простая запись для клиента", "formDesc": "Клиент выбирает услугу, дату и время, оставляет имя и телефон — и отправляет запись."}, {"theme": "theme-plum", "label": "Персональная страница записи", "title": "Студия красоты Айару", "caption": "Маникюр, укладка, окрашивание и запись", "chip1": "Instagram / Telegram / QR", "chip2": "Красивый мобильный формат", "services": [["Маникюр", "90 минут", "9 000 ₸"], ["Укладка", "45 минут", "6 000 ₸"], ["Окрашивание", "120 минут", "18 000 ₸"]], "slots": ["09:30", "11:00", "12:30", "15:00", "16:30", "18:00"], "active": 3, "busy": [2], "timesTitle": "Свободное время", "day": "Сегодня", "formTitle": "Простая запись для клиента", "formDesc": "Одна ссылка вместо длинной переписки в директе и WhatsApp."}], "kk": [{"theme": "theme-charcoal", "label": "Жеке жазылу парағы", "title": "Аудан барбершопы", "caption": "Қызметтер, бағалар, бос уақыт және жазылу", "chip1": "Instagram / WhatsApp / QR", "chip2": "Клиентке тіркелу қажет емес", "services": [["Ерлер шаш қиюы", "50 минут", "7 000 ₸"], ["Шаш қию + сақал", "80 минут", "10 000 ₸"], ["Сұр шашты бояу", "40 минут", "6 000 ₸"]], "slots": ["10:00", "11:30", "12:00", "14:00", "15:30", "17:00"], "active": 0, "busy": [2], "timesTitle": "Бос уақыт", "day": "Бүгін", "formTitle": "Клиентке ыңғайлы жазылу", "formDesc": "Клиент қызметті, күн мен уақытты таңдап, аты мен телефонын қалдырып, өтінім жібереді."}, {"theme": "theme-plum", "label": "Жеке жазылу парағы", "title": "Аяру сұлулық студиясы", "caption": "Маникюр, сәндеу, бояу және жазылу", "chip1": "Instagram / Telegram / QR", "chip2": "Әдемі мобильді формат", "services": [["Маникюр", "90 минут", "9 000 ₸"], ["Сәндеу", "45 минут", "6 000 ₸"], ["Бояу", "120 минут", "18 000 ₸"]], "slots": ["09:30", "11:00", "12:30", "15:00", "16:30", "18:00"], "active": 3, "busy": [2], "timesTitle": "Бос уақыт", "day": "Бүгін", "formTitle": "Клиентке ыңғайлы жазылу", "formDesc": "Direct пен WhatsApp-тағы ұзақ хат алмасудың орнына бір сілтеме."}], "en": [{"theme": "theme-charcoal", "label": "Personal booking page", "title": "Local Barbershop", "caption": "Services, pricing, available time and booking", "chip1": "Instagram / WhatsApp / QR", "chip2": "No client signup required", "services": [["Men's haircut", "50 min", "7 000 ₸"], ["Haircut + beard", "80 min", "10 000 ₸"], ["Grey blending", "40 min", "6 000 ₸"]], "slots": ["10:00", "11:30", "12:00", "14:00", "15:30", "17:00"], "active": 0, "busy": [2], "timesTitle": "Available time", "day": "Today", "formTitle": "Simple booking for the client", "formDesc": "The client chooses a service, date and time, leaves a name and phone number, and sends the request."}, {"theme": "theme-plum", "label": "Personal booking page", "title": "Ayaru Beauty Studio", "caption": "Manicure, styling, coloring and booking", "chip1": "Instagram / Telegram / QR", "chip2": "Beautiful mobile format", "services": [["Manicure", "90 min", "9 000 ₸"], ["Styling", "45 min", "6 000 ₸"], ["Coloring", "120 min", "18 000 ₸"]], "slots": ["09:30", "11:00", "12:30", "15:00", "16:30", "18:00"], "active": 3, "busy": [2], "timesTitle": "Available time", "day": "Today", "formTitle": "Simple booking for the client", "formDesc": "One link instead of long back-and-forth in DMs and WhatsApp."}]}, "showcase": {"ru": [{"theme": "theme-teal", "label": "Страница записи", "title": "Косметология Balance", "caption": "Процедуры, цена, свободные слоты и запись", "tag": "+ 2GIS", "services": [["Чистка лица", "70 минут", "15 000 ₸"], ["Пилинг", "45 минут", "11 000 ₸"]], "slots": ["09:00", "10:30", "12:00", "14:00", "15:30", "17:00"], "active": 2, "busy": [5], "timesTitle": "Доступное время", "day": "Завтра"}, {"theme": "theme-rose", "label": "Страница записи", "title": "Ногтевая студия Асыл", "caption": "Маникюр, педикюр, свободные окна и запись", "tag": "+ WhatsApp", "services": [["Маникюр", "90 минут", "9 000 ₸"], ["Педикюр", "100 минут", "11 000 ₸"]], "slots": ["10:00", "11:30", "13:00", "15:30", "17:00", "18:30"], "active": 4, "busy": [1], "timesTitle": "Доступное время", "day": "Завтра"}], "kk": [{"theme": "theme-teal", "label": "Жазылу беті", "title": "Balance косметологиясы", "caption": "Процедуралар, баға, бос слоттар және жазылу", "tag": "+ 2GIS", "services": [["Бет тазалау", "70 минут", "15 000 ₸"], ["Пилинг", "45 минут", "11 000 ₸"]], "slots": ["09:00", "10:30", "12:00", "14:00", "15:30", "17:00"], "active": 2, "busy": [5], "timesTitle": "Қолжетімді уақыт", "day": "Ертең"}, {"theme": "theme-rose", "label": "Жазылу беті", "title": "Асыл тырнақ студиясы", "caption": "Маникюр, педикюр, бос уақыт және жазылу", "tag": "+ WhatsApp", "services": [["Маникюр", "90 минут", "9 000 ₸"], ["Педикюр", "100 минут", "11 000 ₸"]], "slots": ["10:00", "11:30", "13:00", "15:30", "17:00", "18:30"], "active": 4, "busy": [1], "timesTitle": "Қолжетімді уақыт", "day": "Ертең"}], "en": [{"theme": "theme-teal", "label": "Booking page", "title": "Balance Cosmetology", "caption": "Procedures, price, available slots and booking", "tag": "+ 2GIS", "services": [["Face cleansing", "70 min", "15 000 ₸"], ["Peeling", "45 min", "11 000 ₸"]], "slots": ["09:00", "10:30", "12:00", "14:00", "15:30", "17:00"], "active": 2, "busy": [5], "timesTitle": "Available time", "day": "Tomorrow"}, {"theme": "theme-rose", "label": "Booking page", "title": "Asyl Nail Studio", "caption": "Manicure, pedicure, open slots and booking", "tag": "+ WhatsApp", "services": [["Manicure", "90 min", "9 000 ₸"], ["Pedicure", "100 min", "11 000 ₸"]], "slots": ["10:00", "11:30", "13:00", "15:30", "17:00", "18:30"], "active": 4, "busy": [1], "timesTitle": "Available time", "day": "Tomorrow"}]}}</script>
+
+<footer class="container footer reveal">
+  <div class="divider"></div>
+  <div class="foot-row">
+    <div>Qalagan</div>
+    <div data-i18n="footer_copy"></div>
+  </div>
+</footer>
+
+<script id="translations-json" type="application/json">{
+  "ru": {
+    "nav_for": "Для кого",
+    "nav_how": "Как это работает",
+    "nav_pricing": "Тарифы",
+    "nav_examples": "Примеры",
+    "nav_cta": "Qalagan Connect",
+    "hero_badge": "Персональная страница записи для специалистов",
+    "hero_title_1": "Услуги, цены и запись в одном месте",
+    "hero_title_2": "без хаоса в переписках",
+    "hero_desc": "Персональная страница специалиста с расписанием и онлайн-записью. Работает через WhatsApp, Telegram и Instagram.",
+    "hero_primary": "Qalagan Connect",
+    "screen_status": "online",
+    "screen_services": "Услуги",
+    "screen_slots": "Свободное время",
+    "hero_secondary": "Посмотреть пример",
+    "value1_title": "Для специалистов",
+    "value1_desc": "Beauty, барберы, консультации",
+    "value2_title": "2 тарифа",
+    "value2_desc": "Простой старт и Pro",
+    "value3_title": "5 минут",
+    "value3_desc": "На запуск страницы",
+    "problem_title": "Что не так с записью через мессенджеры?",
+    "problem_desc": "Когда запись живёт только в чатах, и вам, и клиенту приходится тратить больше времени на одно и то же.",
+    "problem1_title": "Постоянная путаница с переписками",
+    "problem1_desc": "Цены, услуги и свободное время постоянно теряются между WhatsApp, Instagram и Telegram.",
+    "problem2_title": "Неудобно для клиентов",
+    "problem2_desc": "Клиенту приходится отдельно спрашивать стоимость, свободные окна и формат записи.",
+    "problem3_title": "Упущенные заявки и потерянные записи",
+    "problem3_desc": "Чем длиннее диалог до брони, тем больше шансов, что клиент просто не дойдёт до записи.",
+    "positioning_kicker": "Позиционирование",
+    "positioning_title": "Не CRM. Не маркетплейс. Не чужая витрина.",
+    "positioning_desc": "Qalagan — это персональная страница записи специалиста, где клиент видит услуги, цены и доступное время в одном месте.",
+    "positioning_pill1": "Только ваши услуги",
+    "positioning_pill2": "Привычная связь через мессенджеры",
+    "positioning_pill3": "Без тяжёлой CRM-логики",
+    "how_kicker": "Как это работает",
+    "how_title": "Чистый сценарий записи без лишней сложности",
+    "how_desc": "Мы не меняем ваш привычный способ работы, а делаем путь клиента к записи понятным и аккуратным.",
+    "step1_title": "Вы присылаете информацию",
+    "step1_desc": "Услуги, цены, ссылки на мессенджеры, график, фото и всё, что клиенту важно увидеть до записи.",
+    "step2_title": "Мы собираем страницу",
+    "step2_desc": "Упаковываем информацию в персональную мобильную страницу в премиальном и понятном формате.",
+    "step3_title": "Вы ведёте клиентов на чистую запись",
+    "step3_desc": "Ставите ссылку в Instagram, WhatsApp, Telegram, 2GIS или QR — и клиент сразу попадает в понятный сценарий.",
+    "examples_kicker": "Примеры",
+    "examples_title": "Как это выглядит на телефоне",
+    "examples_desc": "Та же визуальная логика, что и в hero: чистая страница специалиста, реальные услуги, цены и удобный путь к записи.",
+    "examples_point1": "Имя и специализация",
+    "examples_point2": "Услуги, цены и окна",
+    "examples_point3": "Кнопка записи без лишних шагов",
+    "examples_caption": "Пример страницы специалиста",
+    "examples_phone_label": "Пример страницы специалиста",
+    "examples_phone_hint": "Спокойное переключение",
+    "audience_kicker": "Для кого",
+    "audience_title": "Кому подходит Qalagan",
+    "audience_desc": "Тем, кто уже принимает заявки через мессенджеры, но хочет сделать запись чище, понятнее и премиальнее.",
+    "aud1_title": "Beauty-специалисты",
+    "aud1_desc": "Бровисты, lash- и nail-мастера, косметологи и другие beauty-сферы с частой записью по времени.",
+    "aud2_title": "Барберы и мастера услуг",
+    "aud2_desc": "Тем, кому важно быстро показать прайс, свободные окна и не терять клиентов в длинной переписке.",
+    "aud3_title": "Консультации и wellness",
+    "aud3_desc": "Массажисты, консультанты, наставники и специалисты, которые ведут запись через WhatsApp или Telegram.",
+    "pricing_kicker": "Тарифы",
+    "pricing_title": "Два понятных тарифа",
+    "pricing_desc": "Простая и аккуратная модель без перегруженного SaaS-прайсинга — только то, что нужно специалисту.",
+    "plan_start": "Start",
+    "plan_start_launch": "19 000 ₸ запуск",
+    "plan_start_month": "3 500 ₸ / мес",
+    "plan_start_desc": "Для специалиста, которому нужна аккуратная страница с услугами, ценами и записью в одном месте.",
+    "plan_start_f1": "Персональная страница",
+    "plan_start_f2": "Услуги и цены",
+    "plan_start_f3": "График / доступность",
+    "plan_start_f4": "Кнопки WhatsApp / Telegram / Instagram",
+    "plan_pro": "Pro",
+    "plan_pro_launch": "39 000 ₸ запуск",
+    "plan_pro_month": "6 500 ₸ / мес",
+    "plan_pro_desc": "Для специалиста, которому нужна более сильная упаковка и индивидуальная настройка.",
+    "plan_pro_f1": "Всё из Start",
+    "plan_pro_f2": "Помощь с текстами и структурой",
+    "plan_pro_f3": "Адаптация под сферу",
+    "plan_pro_f4": "Дополнительные блоки",
+    "pricing_badge": "Рекомендуемый",
+    "pricing_cta": "Qalagan Connect",
+    "faq_kicker": "FAQ",
+    "faq_title": "Коротко о главном",
+    "faq1_q": "Qalagan заменяет WhatsApp или Telegram?",
+    "faq1_a": "Нет. Qalagan делает путь к переписке и записи чище, но сама коммуникация может оставаться в привычном мессенджере.",
+    "faq2_q": "Это CRM?",
+    "faq2_a": "Нет. Это персональная страница специалиста, а не тяжёлая система управления клиентами.",
+    "faq3_q": "Это маркетплейс?",
+    "faq3_a": "Нет. Клиент видит только вас, ваши услуги, ваши цены и ваши свободные окна.",
+    "faq4_q": "Можно ли добавить страницу в Instagram, WhatsApp и 2GIS?",
+    "faq4_a": "Да. Страницу можно использовать как основную ссылку в профиле, сообщениях, QR и карточках бизнеса.",
+    "connect_kicker": "Qalagan Connect",
+    "connect_title": "Покажем, как может выглядеть ваша страница",
+    "connect_desc": "Подключим Qalagan под ваш формат работы и настроим понятный клиентский путь без тяжёлой CRM.",
+    "connect_primary": "Qalagan Connect",
+    "connect_secondary": "Посмотреть пример",
+    "footer_copy": "Персональная страница записи для специалистов, которые работают через мессенджеры."
+  },
+  "kk": {
+    "nav_for": "Кімге",
+    "nav_how": "Қалай жұмыс істейді",
+    "nav_pricing": "Тарифтер",
+    "nav_examples": "Мысалдар",
+    "nav_cta": "Qalagan Connect",
+    "hero_badge": "Мамандарға арналған жеке жазылу беті",
+    "hero_title_1": "Қызметтер, бағалар және жазылу бір жерде",
+    "hero_title_2": "хат алмасудағы ретсіздіксіз",
+    "hero_desc": "Кестесі мен онлайн-жазылуы бар маманның жеке беті. WhatsApp, Telegram және Instagram арқылы жұмыс істейді.",
+    "hero_primary": "Qalagan Connect",
+    "screen_status": "online",
+    "screen_services": "Қызметтер",
+    "screen_slots": "Бос уақыт",
+    "hero_secondary": "Мысалды көру",
+    "value1_title": "Мамандар үшін",
+    "value1_desc": "Beauty, барберлер, кеңестер",
+    "value2_title": "2 тариф",
+    "value2_desc": "Қарапайым Start және Pro",
+    "value3_title": "5 минут",
+    "value3_desc": "Бетті іске қосуға",
+    "problem_title": "Мессенджер арқылы жазылуда не дұрыс емес?",
+    "problem_desc": "Жазылу тек чаттарда болса, сіз де, клиент те бір ақпаратты қайта-қайта талқылайсыз.",
+    "problem1_title": "Хабарламалардағы тұрақты шатасу",
+    "problem1_desc": "Бағалар, қызметтер мен бос уақыт WhatsApp, Instagram және Telegram арасында жоғалып кетеді.",
+    "problem2_title": "Клиентке ыңғайсыз",
+    "problem2_desc": "Клиент құнын, бос уақытты және жазылу форматын бөлек сұрауға мәжбүр болады.",
+    "problem3_title": "Өтінімдер мен жазылулар жоғалады",
+    "problem3_desc": "Броньға дейінгі диалог неғұрлым ұзақ болса, клиенттің жолдан шығып кету ықтималдығы соғұрлым жоғары.",
+    "positioning_kicker": "Позициялау",
+    "positioning_title": "CRM емес. Маркетплейс емес. Бөтен витрина емес.",
+    "positioning_desc": "Qalagan — клиент қызметтерді, бағаларды және қолжетімді уақытты бір жерден көретін маманның жеке жазылу беті.",
+    "positioning_pill1": "Тек сіздің қызметтер",
+    "positioning_pill2": "Үйреншікті мессенджер байланысы",
+    "positioning_pill3": "Ауыр CRM логикасынсыз",
+    "how_kicker": "Қалай жұмыс істейді",
+    "how_title": "Артық күрделіліксіз таза жазылу сценарийі",
+    "how_desc": "Біз сіздің жұмыс тәсіліңізді өзгертпейміз, тек клиенттің жазылуға дейінгі жолын айқынырақ етеміз.",
+    "step1_title": "Сіз ақпарат жібересіз",
+    "step1_desc": "Қызметтер, бағалар, мессенджер сілтемелері, кесте, фото және жазылуға дейін клиент көруі керек ақпарат.",
+    "step2_title": "Біз бетті жинаймыз",
+    "step2_desc": "Ақпаратты премиум әрі түсінікті форматтағы жеке мобильді бетке жинаймыз.",
+    "step3_title": "Сіз клиентті таза жазылуға апарасыз",
+    "step3_desc": "Сілтемені Instagram, WhatsApp, Telegram, 2GIS немесе QR-ға қоясыз — клиент бірден түсінікті сценарийге өтеді.",
+    "examples_kicker": "Мысалдар",
+    "examples_title": "Телефонда қалай көрінеді",
+    "examples_desc": "Hero бөліміндегі сияқты логика: маманның таза беті, нақты қызметтер, бағалар және ыңғайлы жазылу жолы.",
+    "examples_point1": "Аты мен мамандануы",
+    "examples_point2": "Қызметтер, бағалар және уақыт",
+    "examples_point3": "Артық қадамсыз жазылу батырмасы",
+    "examples_caption": "Маман бетінің мысалы",
+    "examples_phone_label": "Маман бетінің мысалы",
+    "examples_phone_hint": "Баяу ауысады",
+    "audience_kicker": "Кімге",
+    "audience_title": "Qalagan кімге арналған",
+    "audience_desc": "Мессенджерлер арқылы өтінім қабылдайтын, бірақ жазылуды таза әрі премиум еткісі келетіндерге.",
+    "aud1_title": "Beauty мамандары",
+    "aud1_desc": "Бровистер, lash-, nail-мамандар, косметологтар және уақыт бойынша жазылатын beauty салалар.",
+    "aud2_title": "Барберлер мен қызмет шеберлері",
+    "aud2_desc": "Прайсты, бос уақытты тез көрсеткісі келетін және ұзақ хат алмасуда клиент жоғалтқысы келмейтіндерге.",
+    "aud3_title": "Кеңес пен wellness",
+    "aud3_desc": "Массажистер, кеңесшілер, тәлімгерлер және WhatsApp немесе Telegram арқылы жазылатын мамандарға.",
+    "pricing_kicker": "Тарифтер",
+    "pricing_title": "Екі түсінікті тариф",
+    "pricing_desc": "Артық SaaS-прайсингсіз қарапайым модель — маманға қажет нәрсе ғана.",
+    "plan_start": "Start",
+    "plan_start_launch": "19 000 ₸ іске қосу",
+    "plan_start_month": "3 500 ₸ / ай",
+    "plan_start_desc": "Қызметтері, бағалары және жазылуы бір жерде болатын ұқыпты бет қажет маманға.",
+    "plan_start_f1": "Жеке бет",
+    "plan_start_f2": "Қызметтер мен бағалар",
+    "plan_start_f3": "Кесте / қолжетімділік",
+    "plan_start_f4": "WhatsApp / Telegram / Instagram батырмалары",
+    "plan_pro": "Pro",
+    "plan_pro_launch": "39 000 ₸ іске қосу",
+    "plan_pro_month": "6 500 ₸ / ай",
+    "plan_pro_desc": "Күштірек қаптама мен жеке баптау қажет маманға.",
+    "plan_pro_f1": "Start ішіндегінің бәрі",
+    "plan_pro_f2": "Мәтін мен құрылымға көмек",
+    "plan_pro_f3": "Салаға бейімдеу",
+    "plan_pro_f4": "Қосымша блоктар",
+    "pricing_badge": "Ұсынылады",
+    "pricing_cta": "Qalagan Connect",
+    "faq_kicker": "FAQ",
+    "faq_title": "Маңыздысы қысқаша",
+    "faq1_q": "Qalagan WhatsApp немесе Telegram-ды алмастыра ма?",
+    "faq1_a": "Жоқ. Qalagan жазылуға дейінгі жолды тазартады, бірақ негізгі сөйлесу әдеттегі мессенджерде қала алады.",
+    "faq2_q": "Бұл CRM ме?",
+    "faq2_a": "Жоқ. Бұл — маманның жеке беті, клиентті басқарудың ауыр жүйесі емес.",
+    "faq3_q": "Бұл маркетплейс пе?",
+    "faq3_a": "Жоқ. Клиент тек сізді, қызметтеріңізді, бағаларыңызды және бос уақытыңызды көреді.",
+    "faq4_q": "Бетті Instagram, WhatsApp және 2GIS-ке қоса аламын ба?",
+    "faq4_a": "Иә. Бетті профильдегі негізгі сілтеме, хабарлама, QR немесе бизнес карточкасы ретінде қолдануға болады.",
+    "connect_kicker": "Qalagan Connect",
+    "connect_title": "Сіздің бетіңіз қалай көрінетінін көрсетеміз",
+    "connect_desc": "Qalagan-ды сіздің форматқа бейімдеп, ауыр CRM-сіз түсінікті клиент жолын құрамыз.",
+    "connect_primary": "Qalagan Connect",
+    "connect_secondary": "Мысалды көру",
+    "footer_copy": "Мессенджерлер арқылы жұмыс істейтін мамандарға арналған жеке жазылу беті."
+  },
+  "en": {
+    "nav_for": "For whom",
+    "nav_how": "How it works",
+    "nav_pricing": "Pricing",
+    "nav_examples": "Examples",
+    "nav_cta": "Qalagan Connect",
+    "hero_badge": "Personal booking page for specialists",
+    "hero_title_1": "Services, pricing, and booking in one place",
+    "hero_title_2": "without chaos in messages",
+    "hero_desc": "A specialist’s personal page with schedule and online booking. Works through WhatsApp, Telegram, and Instagram.",
+    "hero_primary": "Qalagan Connect",
+    "screen_status": "online",
+    "screen_services": "Services",
+    "screen_slots": "Available time",
+    "hero_secondary": "View example",
+    "value1_title": "For specialists",
+    "value1_desc": "Beauty, barbers, consulting",
+    "value2_title": "2 plans",
+    "value2_desc": "Simple Start and Pro",
+    "value3_title": "5 minutes",
+    "value3_desc": "To launch the page",
+    "problem_title": "What is wrong with booking through messengers?",
+    "problem_desc": "When booking lives only in chats, both you and the client spend more time on the same repeated questions.",
+    "problem1_title": "Constant chat confusion",
+    "problem1_desc": "Pricing, services, and available times get lost between WhatsApp, Instagram, and Telegram.",
+    "problem2_title": "Inconvenient for clients",
+    "problem2_desc": "Clients have to ask separately about price, available slots, and how booking works.",
+    "problem3_title": "Missed requests and lost bookings",
+    "problem3_desc": "The longer the chat before booking, the more likely the client is to drop off.",
+    "positioning_kicker": "Positioning",
+    "positioning_title": "Not a CRM. Not a marketplace. Not someone else’s storefront.",
+    "positioning_desc": "Qalagan is a specialist’s personal booking page where the client sees services, prices, and available time in one place.",
+    "positioning_pill1": "Only your services",
+    "positioning_pill2": "Familiar messenger communication",
+    "positioning_pill3": "No heavy CRM logic",
+    "how_kicker": "How it works",
+    "how_title": "A clean booking flow without extra complexity",
+    "how_desc": "We do not change the way you already work — we simply make the path to booking cleaner and clearer.",
+    "step1_title": "You send the information",
+    "step1_desc": "Services, pricing, messenger links, schedule, photos, and everything a client should see before booking.",
+    "step2_title": "We build the page",
+    "step2_desc": "We package the information into a personal mobile page in a premium and easy-to-read format.",
+    "step3_title": "You lead clients to a cleaner booking flow",
+    "step3_desc": "Place the link in Instagram, WhatsApp, Telegram, 2GIS, or QR — and the client goes straight into a clearer booking scenario.",
+    "examples_kicker": "Examples",
+    "examples_title": "How it looks on a phone",
+    "examples_desc": "The same product language as the hero: a clean specialist page, real services, pricing, and a simple path to booking.",
+    "examples_point1": "Name and specialization",
+    "examples_point2": "Services, pricing, and slots",
+    "examples_point3": "Booking button without extra steps",
+    "examples_caption": "Example specialist page",
+    "examples_phone_label": "Example specialist page",
+    "examples_phone_hint": "Calm switching",
+    "audience_kicker": "For whom",
+    "audience_title": "Who Qalagan is for",
+    "audience_desc": "For specialists who already take requests through messengers and want a cleaner, more premium booking flow.",
+    "aud1_title": "Beauty specialists",
+    "aud1_desc": "Brow artists, lash and nail specialists, cosmetologists, and other beauty professionals working by time slots.",
+    "aud2_title": "Barbers and service specialists",
+    "aud2_desc": "For people who need to show pricing and open times quickly without losing clients in long chats.",
+    "aud3_title": "Consulting and wellness",
+    "aud3_desc": "Massage specialists, consultants, mentors, and experts who book through WhatsApp or Telegram.",
+    "pricing_kicker": "Pricing",
+    "pricing_title": "Two clear plans",
+    "pricing_desc": "A simple, elegant model without overloaded SaaS pricing — just what a specialist actually needs.",
+    "plan_start": "Start",
+    "plan_start_launch": "19 000 ₸ launch",
+    "plan_start_month": "3 500 ₸ / month",
+    "plan_start_desc": "For specialists who need a clean page with services, prices, and booking in one place.",
+    "plan_start_f1": "Personal page",
+    "plan_start_f2": "Services and pricing",
+    "plan_start_f3": "Schedule / availability",
+    "plan_start_f4": "WhatsApp / Telegram / Instagram buttons",
+    "plan_pro": "Pro",
+    "plan_pro_launch": "39 000 ₸ launch",
+    "plan_pro_month": "6 500 ₸ / month",
+    "plan_pro_desc": "For specialists who need stronger packaging and more individual setup.",
+    "plan_pro_f1": "Everything from Start",
+    "plan_pro_f2": "Help with copy and structure",
+    "plan_pro_f3": "Niche adaptation",
+    "plan_pro_f4": "Additional blocks",
+    "pricing_badge": "Recommended",
+    "pricing_cta": "Qalagan Connect",
+    "faq_kicker": "FAQ",
+    "faq_title": "The essentials, briefly",
+    "faq1_q": "Does Qalagan replace WhatsApp or Telegram?",
+    "faq1_a": "No. Qalagan cleans up the path to communication, but the main conversation can stay in your usual messenger.",
+    "faq2_q": "Is it a CRM?",
+    "faq2_a": "No. It is a personal specialist page, not a heavy client-management system.",
+    "faq3_q": "Is it a marketplace?",
+    "faq3_a": "No. The client sees only you, your services, your prices, and your open slots.",
+    "faq4_q": "Can I add the page to Instagram, WhatsApp, and 2GIS?",
+    "faq4_a": "Yes. You can use the page as the main link in your profile, messages, QR, or business listings.",
+    "connect_kicker": "Qalagan Connect",
+    "connect_title": "We can show what your page could look like",
+    "connect_desc": "We adapt Qalagan to your workflow and build a cleaner client journey without heavy CRM complexity.",
+    "connect_primary": "Qalagan Connect",
+    "connect_secondary": "View example",
+    "footer_copy": "A personal booking page for specialists who work through messengers."
+  }
+}</script>
+
+<script id="specialists-json" type="application/json">{
+  "hero": {
+    "ru": [
+      {"name":"Алия","role":"Бровист / ламимейкер","theme":"theme-powder","services":[["Лами ресниц","12 000 ₸"],["Коррекция бровей","6 000 ₸"],["Лами + окрашивание","14 000 ₸"]],"slots":["10:00","12:30","15:00"],"cta":"Записаться"},
+      {"name":"Нурсултан","role":"Барбер","theme":"theme-graphite","services":[["Стрижка","8 000 ₸"],["Стрижка + борода","11 000 ₸"],["Бритьё","6 000 ₸"]],"slots":["11:30","14:00","18:30"],"cta":"Записаться"},
+      {"name":"Анна","role":"Массажист","theme":"theme-green","services":[["Массаж спины","14 000 ₸"],["Relax session","18 000 ₸"],["Лимфодренаж","16 000 ₸"]],"slots":["09:30","13:00","17:00"],"cta":"Записаться"}
+    ],
+    "kk": [
+      {"name":"Алия","role":"Бровист / лами-маман","theme":"theme-powder","services":[["Кірпік лами","12 000 ₸"],["Қас коррекциясы","6 000 ₸"],["Лами + бояу","14 000 ₸"]],"slots":["10:00","12:30","15:00"],"cta":"Жазылу"},
+      {"name":"Нурсултан","role":"Барбер","theme":"theme-graphite","services":[["Шаш қию","8 000 ₸"],["Шаш + сақал","11 000 ₸"],["Қыру","6 000 ₸"]],"slots":["11:30","14:00","18:30"],"cta":"Жазылу"},
+      {"name":"Анна","role":"Массаж маманы","theme":"theme-green","services":[["Арқа массажы","14 000 ₸"],["Relax session","18 000 ₸"],["Лимфодренаж","16 000 ₸"]],"slots":["09:30","13:00","17:00"],"cta":"Жазылу"}
+    ],
+    "en": [
+      {"name":"Aliya","role":"Brow artist / lash lift specialist","theme":"theme-powder","services":[["Lash lift","12 000 ₸"],["Brow shaping","6 000 ₸"],["Lift + tint","14 000 ₸"]],"slots":["10:00","12:30","15:00"],"cta":"Book now"},
+      {"name":"Nursultan","role":"Barber","theme":"theme-graphite","services":[["Haircut","8 000 ₸"],["Haircut + beard","11 000 ₸"],["Shave","6 000 ₸"]],"slots":["11:30","14:00","18:30"],"cta":"Book now"},
+      {"name":"Anna","role":"Massage specialist","theme":"theme-green","services":[["Back massage","14 000 ₸"],["Relax session","18 000 ₸"],["Lymphatic drainage","16 000 ₸"]],"slots":["09:30","13:00","17:00"],"cta":"Book now"}
+    ]
+  },
+  "showcase": {
+    "ru": [
+      {"name":"Алия","role":"Бровист / ламимейкер","theme":"theme-powder","services":[["Лами ресниц","12 000 ₸"],["Архитектура бровей","7 000 ₸"],["Окрашивание","5 000 ₸"]],"slots":["10:00","13:30","16:00"],"cta":"Записаться"},
+      {"name":"Нурсултан","role":"Барбер","theme":"theme-graphite","services":[["Стрижка","8 000 ₸"],["Fade","9 000 ₸"],["Борода","4 000 ₸"]],"slots":["11:00","14:30","19:00"],"cta":"Записаться"},
+      {"name":"Анна","role":"Массажист","theme":"theme-green","services":[["Relax массаж","18 000 ₸"],["Шея и спина","10 000 ₸"],["90 минут","22 000 ₸"]],"slots":["09:00","12:00","17:30"],"cta":"Записаться"}
+    ],
+    "kk": [
+      {"name":"Алия","role":"Бровист / лами-маман","theme":"theme-powder","services":[["Кірпік лами","12 000 ₸"],["Қас архитектурасы","7 000 ₸"],["Бояу","5 000 ₸"]],"slots":["10:00","13:30","16:00"],"cta":"Жазылу"},
+      {"name":"Нурсултан","role":"Барбер","theme":"theme-graphite","services":[["Шаш қию","8 000 ₸"],["Fade","9 000 ₸"],["Сақал","4 000 ₸"]],"slots":["11:00","14:30","19:00"],"cta":"Жазылу"},
+      {"name":"Анна","role":"Массаж маманы","theme":"theme-green","services":[["Relax массаж","18 000 ₸"],["Мойын және арқа","10 000 ₸"],["90 минут","22 000 ₸"]],"slots":["09:00","12:00","17:30"],"cta":"Жазылу"}
+    ],
+    "en": [
+      {"name":"Aliya","role":"Brow artist / lash lift specialist","theme":"theme-powder","services":[["Lash lift","12 000 ₸"],["Brow architecture","7 000 ₸"],["Tinting","5 000 ₸"]],"slots":["10:00","13:30","16:00"],"cta":"Book now"},
+      {"name":"Nursultan","role":"Barber","theme":"theme-graphite","services":[["Haircut","8 000 ₸"],["Fade","9 000 ₸"],["Beard","4 000 ₸"]],"slots":["11:00","14:30","19:00"],"cta":"Book now"},
+      {"name":"Anna","role":"Massage specialist","theme":"theme-green","services":[["Relax massage","18 000 ₸"],["Neck and back","10 000 ₸"],["90 minutes","22 000 ₸"]],"slots":["09:00","12:00","17:30"],"cta":"Book now"}
+    ]
+  }
+}</script>
 <script src="script.js" defer></script>
 </body>
 </html>
