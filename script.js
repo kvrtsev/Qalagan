@@ -54,16 +54,13 @@ function setLanguage(lang, options = {}) {
 
   if (restartRotators) {
     heroRotator.restart();
-    showcaseRotator.restart();
+    exampleRotator.restart();
   }
 }
 
 langToggle?.addEventListener('click', () => {
-  if (langSwitch.classList.contains('open')) {
-    closeLangMenu();
-  } else {
-    openLangMenu();
-  }
+  if (langSwitch.classList.contains('open')) closeLangMenu();
+  else openLangMenu();
 });
 
 langButtons.forEach((btn) => {
@@ -82,74 +79,79 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeLangMenu();
 });
 
-function renderHeroCard(item) {
-  const services = item.services
-    .map(
-      ([title, meta, price]) =>
-        `<div class="service-row"><div class="service-meta"><b>${title}</b><div>${meta}</div></div><div class="price">${price}</div></div>`
-    )
-    .join('');
-  const slots = item.slots
-    .map(
-      (slot, i) =>
-        `<div class="slot ${i === item.active ? 'active' : ''} ${item.busy.includes(i) ? 'busy' : ''}">${slot}</div>`
-    )
-    .join('');
-  return `<div class="mini-hero ${item.theme}"><div class="small">${item.label}</div><h3>${item.title}</h3><div class="small">${item.caption}</div><div class="mini-grid"><div class="chip">${item.chip1}</div><div class="chip">${item.chip2}</div></div></div><div class="list-card glass-card">${services}</div><div class="list-card glass-card"><div class="time-row"><b>${item.timesTitle}</b><span>${item.day}</span></div><div class="slots">${slots}</div></div><div class="demo-form-card"><div style="font-weight:700;font-size:15px;margin-bottom:8px">${item.formTitle}</div><div style="font-size:13px;line-height:1.6;color:rgba(255,255,255,.78)">${item.formDesc}</div></div>`;
+function getCurrentDict() {
+  return translations[currentLang] || translations[defaultLang];
 }
 
-function renderShowcaseCard(item) {
-  const services = item.services
-    .map(
-      ([title, meta, price]) =>
-        `<div class="service-row"><div class="service-meta"><b>${title}</b><div>${meta}</div></div><div class="price">${price}</div></div>`
-    )
-    .join('');
-  const slots = item.slots
-    .map(
-      (slot, i) =>
-        `<div class="slot ${i === item.active ? 'active' : ''} ${item.busy.includes(i) ? 'busy' : ''}">${slot}</div>`
-    )
-    .join('');
-  return `<div class="card glass-card" style="padding:18px;background:linear-gradient(180deg, rgba(17,22,29,.03), rgba(255,255,255,.68))"><div class="mini-hero ${item.theme}" style="margin:0 0 16px 0;padding:18px 18px 16px"><div class="small">${item.label}</div><h3 style="font-size:26px">${item.title}</h3><div class="small">${item.caption}</div><div style="margin-top:12px" class="chip">${item.tag}</div></div><div class="list-card glass-card" style="margin-top:0">${services}</div><div class="list-card glass-card"><div class="time-row"><b>${item.timesTitle}</b><span>${item.day}</span></div><div class="slots">${slots}</div></div></div>`;
+function renderContacts(contacts) {
+  return contacts.map((type) => `<span class="contact-dot ${type}" aria-hidden="true"></span>`).join('');
 }
 
-function createRotator(targetId, type, renderer, interval) {
+function renderServices(services) {
+  return services.map(([title, price]) => `<div class="service-row"><span>${title}</span><strong>${price}</strong></div>`).join('');
+}
+
+function renderSlots(slots) {
+  return slots.map((slot, index) => `<span class="slot-chip ${index === 2 ? 'active' : ''}">${slot}</span>`).join('');
+}
+
+function renderScreen(item, { compact = false } = {}) {
+  const dict = getCurrentDict();
+  return `
+    <article class="specialist-screen ${item.theme} ${compact ? 'compact' : ''}">
+      <div class="screen-top">
+        <div>
+          <div class="screen-name">${item.name}</div>
+          <div class="screen-role">${item.role}</div>
+        </div>
+        <div class="screen-contacts">${renderContacts(item.contacts)}</div>
+      </div>
+      <div class="screen-card-block">
+        <div class="screen-label">${dict.nav_examples}</div>
+        ${renderServices(item.services)}
+      </div>
+      <div class="screen-card-block">
+        <div class="screen-label">${dict.examples_phone_hint}</div>
+        <div class="slot-grid">${renderSlots(item.slots)}</div>
+      </div>
+      <button class="screen-button" type="button">${item.cta}</button>
+    </article>`;
+}
+
+function createHeroRotator(targetId) {
   const el = document.getElementById(targetId);
   let index = 0;
   let timer = null;
 
-  const dataset = () => specialistSets[type][currentLang] || specialistSets[type][defaultLang];
+  const dataset = () => specialistSets.hero[currentLang] || specialistSets.hero[defaultLang] || [];
 
-  function paint(nextIndex) {
+  function paint() {
     const items = dataset();
-    el.innerHTML = renderer(items[nextIndex % items.length]);
-  }
+    if (!el || items.length < 3) return;
+    const center = items[index % items.length];
+    const left = items[(index + items.length - 1) % items.length];
+    const right = items[(index + 1) % items.length];
 
-  function tick() {
-    const items = dataset();
-    if (!items.length) return;
-    el.classList.remove('animating-in');
-    el.classList.add('animating-out');
-    setTimeout(() => {
-      index = (index + 1) % items.length;
-      paint(index);
-      el.classList.remove('animating-out');
-      el.classList.add('animating-in');
-      requestAnimationFrame(() =>
-        setTimeout(() => el.classList.remove('animating-in'), 30)
-      );
-    }, 340);
+    el.innerHTML = `
+      <div class="hero-phone left">${renderScreen(left, { compact: true })}</div>
+      <div class="hero-phone center">${renderScreen(center)}</div>
+      <div class="hero-phone right">${renderScreen(right, { compact: true })}</div>`;
   }
 
   function start() {
     stop();
-    paint(index);
-    timer = setInterval(tick, interval);
+    paint();
+    timer = setInterval(() => {
+      const items = dataset();
+      if (!items.length) return;
+      index = (index + 1) % items.length;
+      paint();
+    }, 4300);
   }
 
   function stop() {
     if (timer) clearInterval(timer);
+    timer = null;
   }
 
   function restart() {
@@ -160,28 +162,90 @@ function createRotator(targetId, type, renderer, interval) {
   return { start, stop, restart };
 }
 
-const heroRotator = createRotator('heroRotator', 'hero', renderHeroCard, 2900);
-const showcaseRotator = createRotator('showcaseRotator', 'showcase', renderShowcaseCard, 3200);
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
+function createExampleRotator(targetId) {
+  const el = document.getElementById(targetId);
+  let index = 0;
+  let timer = null;
+  let isAnimating = false;
+
+  const dataset = () => specialistSets.showcase[currentLang] || specialistSets.showcase[defaultLang] || [];
+
+  function panel(item, className) {
+    const node = document.createElement('div');
+    node.className = `example-panel ${className}`;
+    node.innerHTML = renderScreen(item);
+    return node;
+  }
+
+  function paint(currentIndex) {
+    const items = dataset();
+    if (!el || !items.length) return;
+    el.innerHTML = '';
+    el.appendChild(panel(items[currentIndex % items.length], 'current'));
+  }
+
+  function tick() {
+    const items = dataset();
+    if (!el || items.length < 2 || isAnimating) return;
+    const nextIndex = (index + 1) % items.length;
+    const current = el.querySelector('.example-panel.current');
+    const next = panel(items[nextIndex], 'next');
+    el.appendChild(next);
+    isAnimating = true;
+
+    requestAnimationFrame(() => {
+      el.classList.add('switching');
+      current?.classList.add('leave');
+      next.classList.add('enter');
     });
-  },
-  { threshold: 0.14 }
-);
+
+    next.addEventListener('transitionend', () => {
+      index = nextIndex;
+      isAnimating = false;
+      el.classList.remove('switching');
+      paint(index);
+    }, { once: true });
+  }
+
+  function start() {
+    stop();
+    paint(index);
+    timer = setInterval(tick, 5000);
+  }
+
+  function stop() {
+    if (timer) clearInterval(timer);
+    timer = null;
+  }
+
+  function restart() {
+    index = 0;
+    isAnimating = false;
+    start();
+  }
+
+  return { start, stop, restart };
+}
+
+const heroRotator = createHeroRotator('heroStack');
+const exampleRotator = createExampleRotator('showcaseRotator');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 setLanguage(currentLang, { restartRotators: false });
 heroRotator.start();
-showcaseRotator.start();
+exampleRotator.start();
 
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
     heroRotator.stop();
-    showcaseRotator.stop();
+    exampleRotator.stop();
   } else {
     heroRotator.start();
-    showcaseRotator.start();
+    exampleRotator.start();
   }
 });
