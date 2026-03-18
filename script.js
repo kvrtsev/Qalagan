@@ -140,7 +140,7 @@ function createExamplesRotator(targetId) {
     return panel;
   }
 
-  function paint(nextIndex) {
+  function paint() {
     const items = dataset();
     if (!el || !items.length) return;
     el.innerHTML = '';
